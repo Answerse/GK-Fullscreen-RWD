@@ -1009,6 +1009,136 @@ document.addEventListener('DOMContentLoaded', function() {
     financeBusinessCarousel.init();
     
     // ==========================================
+    // 产品展示轮播 (Products Carousel)
+    // ==========================================
+    const productsCarousel = {
+        track: document.querySelector('.products-section .products-track'),
+        prevBtn: document.querySelector('.products-nav-prev'),
+        nextBtn: document.querySelector('.products-nav-next'),
+        indicatorsContainer: document.querySelector('.products-indicators'),
+        cards: document.querySelectorAll('.products-section .product-card'),
+        currentPage: 0,
+        cardsPerPage: 4,
+        totalPages: 0,
+        timer: null,
+        interval: 4000,
+        
+        init() {
+            if (!this.track || this.cards.length === 0) return;
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            this.createIndicators();
+            this.bindEvents();
+            this.updatePosition();
+            this.startAutoPlay();
+        },
+        
+        createIndicators() {
+            if (!this.indicatorsContainer) return;
+            this.indicatorsContainer.innerHTML = '';
+            for (let i = 0; i < this.totalPages; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'products-indicator' + (i === 0 ? ' active' : '');
+                dot.dataset.index = i;
+                this.indicatorsContainer.appendChild(dot);
+            }
+            this.indicators = this.indicatorsContainer.querySelectorAll('.products-indicator');
+        },
+        
+        goTo(page) {
+            if (page < 0) page = this.totalPages - 1;
+            if (page >= this.totalPages) page = 0;
+            this.currentPage = page;
+            this.updatePosition();
+            this.updateIndicators();
+        },
+        
+        next() {
+            this.goTo(this.currentPage + 1);
+        },
+        
+        prev() {
+            this.goTo(this.currentPage - 1);
+        },
+        
+        updatePosition() {
+            if (!this.track) return;
+            const slider = this.track.parentElement;
+            const sliderWidth = slider.clientWidth;
+            const gap = 40;
+            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            this.cards.forEach(card => {
+                card.style.width = cardWidth + 'px';
+                card.style.flex = 'none';
+                card.style.minWidth = cardWidth + 'px';
+                card.style.maxWidth = cardWidth + 'px';
+            });
+            const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
+            this.track.style.transform = 'translateX(' + offset + 'px)';
+        },
+        
+        updateIndicators() {
+            if (!this.indicators) return;
+            this.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === this.currentPage);
+            });
+        },
+        
+        startAutoPlay() {
+            this.stopAutoPlay();
+            this.timer = setInterval(() => this.next(), this.interval);
+        },
+        
+        stopAutoPlay() {
+            if (this.timer) {
+                clearInterval(this.timer);
+                this.timer = null;
+            }
+        },
+        
+        resetAutoPlay() {
+            this.stopAutoPlay();
+            this.startAutoPlay();
+        },
+        
+        bindEvents() {
+            const carousel = document.querySelector('.products-carousel');
+            
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', () => {
+                    this.prev();
+                    this.resetAutoPlay();
+                });
+            }
+            
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', () => {
+                    this.next();
+                    this.resetAutoPlay();
+                });
+            }
+            
+            if (this.indicatorsContainer) {
+                this.indicatorsContainer.addEventListener('click', (e) => {
+                    const indicator = e.target.closest('.products-indicator');
+                    if (indicator && indicator.dataset.index !== undefined) {
+                        this.goTo(parseInt(indicator.dataset.index));
+                        this.resetAutoPlay();
+                    }
+                });
+            }
+            
+            if (carousel) {
+                carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
+                carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+            
+            window.addEventListener('resize', () => this.updatePosition());
+        }
+    };
+    
+    productsCarousel.init();
+    
+    // ==========================================
     // 键盘导航支持
     // ==========================================
     document.addEventListener('keydown', function(e) {
