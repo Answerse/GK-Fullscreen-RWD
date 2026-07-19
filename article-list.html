@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>广西糖业集团 - 新闻中心</title>
+    <link rel="stylesheet" href="css/style.css?v=33">
+		<link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-article-list theme-green">
+    <!-- 移动端汉堡菜单按钮 -->
+    <button class="mobile-menu-btn" aria-label="打开菜单">
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+    </button>
+    
+    <!-- 移动端全屏导航菜单 -->
+    <nav class="mobile-nav">
+        <a href="index.html#hero" class="mobile-nav-item">首页</a>
+        <a href="about-enterprise.html?theme=green" class="mobile-nav-item">走进企业</a>
+        <a href="article-list.html" class="mobile-nav-item active">新闻中心</a>
+        <a href="index.html#media" class="mobile-nav-item">媒体聚焦</a>
+        <a href="index.html#business" class="mobile-nav-item">主营业务</a>
+        <a href="index.html#contact" class="mobile-nav-item">联系方式</a>
+    </nav>
+    
+    <!-- 侧边导航栏 -->
+    <aside class="sidebar sidebar-sub">
+        <div class="sidebar-logo">
+            <img src="public/images/logo-green.svg" alt="国控Logo" class="logo-img logo-full">
+            <img src="public/images/logo-green-mini.svg" alt="国控Logo" class="logo-img logo-mini">
+        </div>
+        <nav class="sidebar-nav sub-nav">
+            <a href="index.html#hero" class="nav-item sub-nav-item" data-section="hero">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">首页</span>
+            </a>
+            <a href="about-enterprise.html?theme=green" class="nav-item sub-nav-item" data-section="about">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">走进企业</span>
+            </a>
+            <a href="article-list.html" class="nav-item sub-nav-item active" data-section="news">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">新闻中心</span>
+            </a>
+            <a href="index.html#media" class="nav-item sub-nav-item" data-section="media">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">媒体聚焦</span>
+            </a>
+            <a href="index.html#business" class="nav-item sub-nav-item" data-section="business">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">主营业务</span>
+            </a>
+            <a href="index.html#contact" class="nav-item sub-nav-item" data-section="contact">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">联系方式</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- 搜索按钮 -->
+    <button class="search-btn" aria-label="搜索">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3846 0C5.54479 0 0 5.54479 0 12.3846C0 19.2245 5.54479 24.7693 12.3846 24.7693C15.4168 24.7693 18.1945 23.6796 20.3474 21.8704L26.1616 27.6846C26.5821 28.1051 27.264 28.1051 27.6846 27.6846C28.1051 27.264 28.1051 26.5821 27.6846 26.1616L21.8704 20.3474C23.6796 18.1945 24.7693 15.4168 24.7693 12.3846C24.7693 5.54479 19.2245 0 12.3846 0ZM2.15385 12.3846C2.15385 6.73433 6.73433 2.15385 12.3846 2.15385C18.0349 2.15385 22.6154 6.73433 22.6154 12.3846C22.6154 18.0349 18.0349 22.6154 12.3846 22.6154C6.73433 22.6154 2.15385 18.0349 2.15385 12.3846Z"/>
+        </svg>
+    </button>
+
+    <!-- 页面切换按钮 -->
+    <div class="page-switch-wrapper" data-current-page="agriculture">
+        <button class="page-switch-btn" aria-label="切换页面">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-sm svg-icon-white">
+                <circle cx="12" cy="6" r="2"/>
+                <circle cx="12" cy="12" r="2"/>
+                <circle cx="12" cy="18" r="2"/>
+            </svg>
+        </button>
+        <div class="page-switch-panel">
+            <a href="index.html" class="page-switch-item active" data-target="agriculture">农业</a>
+            <a href="technology.html" class="page-switch-item" data-target="technology">科技</a>
+            <a href="finance.html" class="page-switch-item" data-target="finance">金融</a>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="article-main">
+        <!-- 二级导航 -->
+        <section class="article-banner">
+            <div class="banner-bg">
+                <img src="public/images/banner-agriculture-bg.webp" alt="氛围图">
+                <div class="banner-gradient"></div>
+            </div>
+            <div class="banner-content">
+                <div class="banner-nav-row">
+                    <div class="breadcrumb">
+                        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-home">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14ZM12.7936 2.69438C13.2792 2.16039 13.6883 2 14 2C14.3117 2 14.7208 2.16039 15.2064 2.69438C15.6922 3.22865 16.1756 4.05754 16.6022 5.16659C17.3708 7.16505 17.8918 9.90778 17.985 13H10.015C10.1082 9.90778 10.6292 7.16505 11.3978 5.16659C11.8244 4.05754 12.3078 3.22865 12.7936 2.69438ZM8.01416 13C8.10767 9.71022 8.65959 6.71462 9.53112 4.44863C9.79979 3.7501 10.105 3.10475 10.4468 2.53476C5.8598 3.95472 2.4493 8.05171 2.04107 13H8.01416ZM2.04107 15H8.01416C8.10767 18.2898 8.65959 21.2854 9.53112 23.5514C9.79979 24.2499 10.105 24.8952 10.4468 25.4652C5.8598 24.0453 2.4493 19.9483 2.04107 15ZM25.9589 13C25.5507 8.05172 22.1402 3.95472 17.5532 2.53476C17.895 3.10475 18.2002 3.7501 18.4689 4.44863C19.3404 6.71462 19.8923 9.71022 19.9858 13H25.9589ZM19.9858 15H25.9589C25.5507 19.9483 22.1402 24.0453 17.5532 25.4652C17.895 24.8952 18.2002 24.2499 18.4689 23.5514C19.3404 21.2854 19.8923 18.2898 19.9858 15ZM17.985 15C17.8918 18.0922 17.3708 20.8349 16.6022 22.8334C16.1756 23.9425 15.6922 24.7713 15.2064 25.3056C14.7208 25.8396 14.3117 26 14 26C13.6883 26 13.2792 25.8396 12.7936 25.3056C12.3078 24.7713 11.8244 23.9425 11.3978 22.8334C10.6292 20.8349 10.1082 18.0922 10.015 15H17.985Z" />
+                        </svg>
+                        <nav class="breadcrumb-nav">
+                            <a href="index.html" class="breadcrumb-item">首页</a>
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-arrow">
+                                <path d="M6 2L10 8L6 14" stroke="#101215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="breadcrumb-item active">新闻列表</span>
+                        </nav>
+                    </div>
+                    <div class="nav-tabs">
+                        <button class="nav-tab active" data-tab="style1">网格列表</button>
+                        <button class="nav-tab" data-tab="style2">垂直列表</button>
+                        <button class="nav-tab" data-tab="style3">无图列表</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻列表区域 -->
+        <section class="article-section">
+            <div class="section-inner">
+                <!-- 焦点轮播 -->
+                <div class="article-focus">
+                    <div class="focus-slider">
+                        <div class="focus-slide active">
+                            <img src="public/images/article-focus-1.webp" alt="焦点图">
+                            <div class="focus-overlay"></div>
+                            <div class="focus-info">
+                                <div class="date-display theme-light">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="focus-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                            </div>
+                            <button class="focus-nav focus-prev" aria-label="上一张">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
+                                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="focus-nav focus-next" aria-label="下一张">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
+                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="focus-indicators">
+                        <span class="focus-indicator active"></span>
+                        <span class="focus-indicator"></span>
+                        <span class="focus-indicator"></span>
+                    </div>
+                </div>
+
+                <!-- 文章列表 -->
+                <div class="news-article-list">
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-1.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-2.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-3.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                     <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-1.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-2.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-3.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                     <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-1.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-2.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=green" class="news-card">
+                        <div class="news-image">
+                            <img src="public/images/news-3.webp" alt="新闻图片">
+                        </div>
+                        <div class="news-body news-body-variant">
+                            <div class="news-meta">
+                                <div class="date-display">
+                                    <span>2025/ 3</span>
+                                    <span>03</span>
+                                </div>
+                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                            </div>
+                            <span class="news-more">
+                                <span>了解更多</span>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 分页器 -->
+                <div class="pagination">
+                    <button class="pagination-btn prev" aria-label="上一页">
+                        <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-sm">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6819 0.317282C12.2589 -0.105761 11.573 -0.105761 11.15 0.317282L0.317282 11.15C-0.105761 11.573 -0.105761 12.2589 0.317282 12.6819L11.15 23.5146C11.573 23.9376 12.2589 23.9376 12.6819 23.5146C13.105 23.0916 13.105 22.4057 12.6819 21.9826L2.61524 11.9159L12.6819 1.84925C13.105 1.42621 13.105 0.740324 12.6819 0.317282Z" fill="#166534"/>
+                        </svg>
+                    </button>
+                    <button class="pagination-num active">1</button>
+                    <button class="pagination-num">2</button>
+                    <button class="pagination-num">3</button>
+                    <button class="pagination-num">4</button>
+                    <button class="pagination-num">5</button>
+                    <button class="pagination-btn next" aria-label="下一页">
+                        <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-sm">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.317282 0.317282C0.740324 -0.105761 1.42621 -0.105761 1.84925 0.317282L12.6819 11.15C13.105 11.573 13.105 12.2589 12.6819 12.6819L1.84925 23.5146C1.42621 23.9376 0.740324 23.9376 0.317282 23.5146C-0.105761 23.0916 -0.105761 22.4057 0.317282 21.9826L10.384 11.9159L0.317282 1.84925C-0.105761 1.42621 -0.105761 0.740324 0.317282 0.317282Z" fill="#166534"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="article-footer">
+        <div class="footer-columns">
+            <div class="footer-contact">
+                <div class="footer-logo">
+                    <img src="public/images/footer-logo.svg" alt="广西糖业集团">
+                </div>
+                <div class="footer-contact-info">
+                    <div class="footer-wechat">
+                        <div class="footer-wechat-qr">
+                            <img src="public/images/qrcode-wechat.webp" alt="微信公众号">
+                        </div>
+                        <span class="footer-wechat-text">微信公众号</span>
+                    </div>
+                    <div class="footer-details">
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">电话：</span>
+                            <span class="footer-detail-value">0771-2814653</span>
+                        </div>
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">地址：</span>
+                            <span class="footer-detail-value">广西南宁市民族大道32号</span>
+                        </div>
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">邮箱：</span>
+                            <span class="footer-detail-value">0771-2814653</span>
+                        </div>
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">邮编：</span>
+                            <span class="footer-detail-value">530072</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links-container">
+                <div class="footer-links">
+                    <span class="footer-links-title">快速链接</span>
+                    <a href="#" class="footer-links-item">关于我们</a>
+                    <a href="#" class="footer-links-item">业务领域</a>
+                    <a href="#" class="footer-links-item">新闻中心</a>
+                    <a href="#" class="footer-links-item">联系我们</a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-links">
+                    <span class="footer-links-title">业务板块</span>
+                    <a href="#" class="footer-links-item">粮食产业</a>
+                    <a href="#" class="footer-links-item">糖业板块</a>
+                    <a href="#" class="footer-links-item">畜牧水产</a>
+                    <a href="#" class="footer-links-item">果蔬茶叶</a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-links">
+                    <span class="footer-links-title">党群工作</span>
+                    <a href="#" class="footer-links-item">党建动态</a>
+                    <a href="#" class="footer-links-item">纪检监察</a>
+                    <a href="#" class="footer-links-item">人才招聘</a>
+                    <a href="#" class="footer-links-item">联系我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-friend-links">
+            <span class="footer-friend-links-label">友情链接:</span>
+            <div class="footer-friend-links-list">
+                <a href="#" class="footer-friend-link">广西国控资本运营集团有限责任公司</a>
+                <a href="#" class="footer-friend-link">北部湾产权交易所集团股份有限公司</a>
+                <a href="#" class="footer-friend-link">广西宏桂资本运营集团有限公司</a>
+                <a href="#" class="footer-friend-link">广西产投资本运营集团有限公司</a>
+                <a href="#" class="footer-friend-link">广西宏桂资产经营集团有限公司</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <span class="footer-copyright-text">Copyright © 2009-2026 广西糖业集团有限公司 版权所有</span>
+            <span class="footer-copyright-text">桂公网安备45010802000562号</span>
+        </div>
+    </footer>
+
+    <!-- 底部品牌色条 -->
+    <div class="brand-bar">
+        <div class="brand-red"></div>
+        <div class="brand-gold"></div>
+    </div>
+
+    <script src="js/main.js?v=17"></script>
+</body>
+</html>
