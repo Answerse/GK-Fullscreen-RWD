@@ -204,38 +204,84 @@
     }
 
     .business-list {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
-        max-height: none !important;
     }
 
     .business-card {
-        width: calc(50% - 10px) !important;
-        min-width: auto !important;
+        grid-column: span 1 !important;
     }
 
-    .contact-info-row {
+    .business-card.active {
+        grid-column: span 2 !important;
+    }
+
+    .contact-info-wrapper {
         flex-direction: column !important;
-        gap: 32px !important;
+        gap: 40px !important;
     }
 
-    .contact-divider {
+    .contact-info-card {
+        width: 100% !important;
+    }
+
+    .contact-map-wrapper {
+        min-height: 300px !important;
+    }
+
+    .contact-title {
+        font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+    }
+
+    .contact-section .section-inner {
+        padding: 20px 30px 40px !important;
+    }
+
+    .video-section {
+        padding: 80px 60px !important;
+    }
+
+    .video-deco-left,
+    .video-deco-right {
         display: none !important;
     }
 
-    .contact-info-item {
-        flex-direction: row !important;
-        gap: 16px !important;
-        justify-content: flex-start !important;
+    .video-player-wrap {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        max-width: 760px !important;
+        margin: 80px auto 0 !important;
     }
 
-    .contact-info-item-address {
-        flex-direction: row !important;
+    .video-player-area {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 960 / 524 !important;
     }
 
-    .contact-info-item-address .contact-info-value {
-        text-align: left !important;
+    .video-poster {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        border-radius: 6px !important;
+    }
+
+    .video-poster-overlay {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+    }
+
+    .video-info-bar {
+        width: 100% !important;
+    }
+
+    .video-play-btn {
+        left: calc(50% - 50px) !important;
+        top: calc(50% - 50px) !important;
     }
 
     .banner-content {
@@ -482,43 +528,80 @@
     }
 
     .business-list {
-        flex-direction: column !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
-        max-height: none !important;
     }
 
     .business-card {
-        width: 100% !important;
-        min-width: auto !important;
+        grid-column: span 1 !important;
     }
 
-    .contact-info-row {
+    .contact-info-wrapper {
         flex-direction: column !important;
-        gap: 24px !important;
+        gap: 30px !important;
     }
 
-    .contact-icon-wrap {
-        padding: 20px !important;
+    .contact-info-card {
+        width: 100% !important;
+        padding: 24px !important;
     }
 
-    .contact-icon-wrap img {
-        width: 32px !important;
-        height: 32px !important;
+    .contact-info-item {
+        gap: 16px !important;
+        padding: 10px 0 !important;
     }
 
-    .contact-info-value {
+    .contact-info-label {
         font-size: 16px !important;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        padding: 12px 16px !important;
-        font-size: 14px !important;
+    .contact-info-value {
+        font-size: 20px !important;
     }
 
-    .contact-form-btn {
-        padding: 12px 30px !important;
-        font-size: 14px !important;
+    .contact-info-item-last .contact-info-value {
+        font-size: 16px !important;
+    }
+
+    .contact-map-wrapper {
+        min-height: 250px !important;
+    }
+
+    .contact-copyright {
+        flex-direction: column !important;
+        gap: 8px !important;
+        padding: 16px 0 !important;
+        text-align: center !important;
+    }
+
+    .video-section {
+        padding: 60px 30px !important;
+    }
+
+    .video-player-wrap {
+        max-width: 100% !important;
+        margin-top: 60px !important;
+    }
+
+    .video-player-area {
+        aspect-ratio: 960 / 524 !important;
+    }
+
+    .video-play-btn {
+        width: 70px !important;
+        height: 70px !important;
+        left: calc(50% - 35px) !important;
+        top: calc(50% - 35px) !important;
+        border-radius: 8px !important;
+    }
+
+    .contact-title {
+        font-size: clamp(1.25rem, 4vw, 2rem) !important;
+    }
+
+    .contact-section .section-inner {
+        padding: 16px 20px 32px !important;
     }
 
     .banner-content {
@@ -682,27 +765,40 @@
         width: 60px !important;
     }
 
-    .contact-info-item {
+    .contact-copyright {
         flex-direction: column !important;
-        align-items: flex-start !important;
         gap: 8px !important;
+        padding: 12px 0 !important;
+        text-align: center !important;
     }
 
-    .contact-info-item-address {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+    .contact-copyright-text,
+    .contact-icp-text {
+        font-size: 11px !important;
     }
 
-    .contact-info-item-address .contact-info-value {
-        text-align: left !important;
+    .video-section {
+        padding: 40px 15px !important;
     }
 
-    .contact-info-value {
-        font-size: 14px !important;
+    .video-player-frame {
+        padding: 10px !important;
+        border-radius: 12px !important;
     }
 
-    .contact-info-label {
-        font-size: 14px !important;
+    .video-player-area {
+        border-radius: 6px !important;
+    }
+
+    .video-play-btn {
+        width: 56px !important;
+        height: 56px !important;
+        left: calc(50% - 28px) !important;
+        top: calc(50% - 28px) !important;
+    }
+
+    .contact-section .section-inner {
+        padding: 12px 15px 24px !important;
     }
 
     .footer-links-container {
@@ -762,6 +858,14 @@
 
     .news-card-date {
         font-size: 11px !important;
+    }
+
+    .business-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .business-card {
+        grid-column: span 1 !important;
     }
 
     .business-name {
