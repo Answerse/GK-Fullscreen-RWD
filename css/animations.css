@@ -84,29 +84,32 @@
    ======================================== */
 .business-card {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(50px) scale(0.88);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 出场逐张延迟 */
 .business-card:nth-child(1) { transition-delay: 0s; }
 .business-card:nth-child(2) { transition-delay: 0.1s; }
 .business-card:nth-child(3) { transition-delay: 0.2s; }
 .business-card:nth-child(4) { transition-delay: 0.3s; }
 
 .section.in-view .business-card {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.85;
+    transform: translateY(0) scale(0.96);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 进场逐张延迟（等待 section-inner 动画完成后开始） */
-.section.in-view .business-card:nth-child(1) { transition-delay: 0.4s; }
-.section.in-view .business-card:nth-child(2) { transition-delay: 0.5s; }
-.section.in-view .business-card:nth-child(3) { transition-delay: 0.6s; }
-.section.in-view .business-card:nth-child(4) { transition-delay: 0.7s; }
+.section.in-view .business-card.active {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.03);
+}
+
+.section.in-view .business-card:nth-child(1) { transition-delay: 0.3s; }
+.section.in-view .business-card:nth-child(2) { transition-delay: 0.4s; }
+.section.in-view .business-card:nth-child(3) { transition-delay: 0.5s; }
+.section.in-view .business-card:nth-child(4) { transition-delay: 0.6s; }
 
 /* ========================================
    媒体聚焦 - 卡片逐张上下滑动动效

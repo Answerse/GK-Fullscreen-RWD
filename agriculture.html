@@ -7,9 +7,9 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>广西糖业集团 - 农业板块</title>
-    <link rel="stylesheet" href="css/style.css?v=33">
+    <link rel="stylesheet" href="css/style.css?v=36">
 		<link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/animations.css?v=3">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .media-section .section-title {
@@ -37,7 +37,7 @@
         <a href="#about" class="mobile-nav-item" data-section="about">走进企业</a>
         <a href="#news" class="mobile-nav-item" data-section="news">新闻中心</a>
         <a href="#media" class="mobile-nav-item" data-section="media">媒体聚焦</a>
-        <a href="#video" class="mobile-nav-item" data-section="video">视频</a>
+        <a href="#video" class="mobile-nav-item" data-section="video">企业视频</a>
         <a href="#business" class="mobile-nav-item" data-section="business">主营业务</a>
         <a href="#products" class="mobile-nav-item" data-section="products">产品展示</a>
         <a href="#contact" class="mobile-nav-item" data-section="contact">联系方式</a>
@@ -68,7 +68,7 @@
             </a>
             <a href="#video" class="nav-item home-nav-item" data-section="video">
                 <span class="nav-dot home-nav-dot"></span>
-                <span class="nav-text home-nav-text">视频</span>
+                <span class="nav-text home-nav-text">企业视频</span>
             </a>
             <a href="#business" class="nav-item home-nav-item" data-section="business">
                 <span class="nav-dot home-nav-dot"></span>
@@ -368,37 +368,53 @@
             </div>
         </section>
 
-        <!-- 视频 -->
+        <!-- 视频模块 -->
         <section id="video" class="section video-section">
             <div class="video-bg"></div>
+            <div class="video-bg-dot"></div>
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
-                        <h2 class="section-title">视频</h2>
+                        <h2 class="section-title">企业视频</h2>
                     </div>
+                    <a href="article-list.html" class="more-link">
+                        <span>查看更多</span>
+                        <span class="arrow-circle">
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        </span>
+                    </a>
                 </div>
+
                 <div class="video-content">
-                    <img src="public/images/video-bg-flip-left.svg" alt="" class="video-deco-left">
-                    <img src="public/images/video-bg-flip-right.svg" alt="" class="video-deco-right">
                     <div class="video-player-wrap">
                         <div class="video-player-frame">
                             <div class="video-player-area">
-                                <img src="public/images/video-poster.png" alt="视频封面" class="video-poster">
+                                <img src="public/images/video-cover.png" alt="视频封面" class="video-poster">
                                 <div class="video-poster-overlay"></div>
-                                <div class="video-info-bar">
-                                    <button class="video-info-btn" aria-label="收藏">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                        </svg>
-                                    </button>
-                                    <span class="video-info-text">央视新闻</span>
-                                </div>
-                                <button class="video-play-btn" aria-label="播放视频">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M22 14L10 22V6L22 14Z" fill="white"/>
+                                
+                                <button class="video-play-btn" aria-label="播放">
+                                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="video-play-icon">
+                                        <path d="M16 8L48 32L16 56V8Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
+
+                                <div class="video-info-bar">
+                                    <div class="video-progress-wrap">
+                                        <span class="video-time">00:25</span>
+                                        <div class="video-slider-wrap">
+                                            <div class="video-slider-bg-left"></div>
+                                            <div class="video-slider-thumb"></div>
+                                            <div class="video-slider-bg-right"></div>
+                                        </div>
+                                        <span class="video-time">01:25</span>
+                                    </div>
+                                    <button class="video-fullscreen-btn" aria-label="全屏">
+                                        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4H12V8H8V12H4V4ZM4 20H8V24H12V28H4V20ZM20 4H24V8H28V12H24V8H20V4ZM20 20H24V28H28V24H24V20H20Z" fill="#FFFFFF"/>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -427,6 +443,10 @@
                 </div>
                 <div class="business-list">
                     <div class="business-card active" data-index="0">
+                        <div class="business-card-bg">
+                            <div class="business-card-bg-img" style="background-image: url('public/images/business-bg-1.png')"></div>
+                            <div class="business-card-bg-mask"></div>
+                        </div>
                         <div class="business-header">
                             <div class="business-icon-wrap">
                                 <img src="public/images/icon-sugarcane.svg" alt="制糖" class="business-icon">
@@ -444,6 +464,10 @@
                         </div>
                     </div>
                     <div class="business-card" data-index="1">
+                        <div class="business-card-bg">
+                            <div class="business-card-bg-img" style="background-image: url('public/images/business-bg-2.png')"></div>
+                            <div class="business-card-bg-mask"></div>
+                        </div>
                         <div class="business-header">
                             <div class="business-icon-wrap">
                                 <img src="public/images/icon-notebook.svg" alt="纸业" class="business-icon">
@@ -461,6 +485,10 @@
                         </div>
                     </div>
                     <div class="business-card" data-index="2">
+                        <div class="business-card-bg">
+                            <div class="business-card-bg-img" style="background-image: url('public/images/business-bg-3.png')"></div>
+                            <div class="business-card-bg-mask"></div>
+                        </div>
                         <div class="business-header">
                             <div class="business-icon-wrap">
                                 <img src="public/images/icon-wine.svg" alt="酒业" class="business-icon">
@@ -478,6 +506,10 @@
                         </div>
                     </div>
                     <div class="business-card" data-index="3">
+                        <div class="business-card-bg">
+                            <div class="business-card-bg-img" style="background-image: url('public/images/business-bg-4.png')"></div>
+                            <div class="business-card-bg-mask"></div>
+                        </div>
                         <div class="business-header">
                             <div class="business-icon-wrap">
                                 <img src="public/images/icon-fertilizer.svg" alt="肥业" class="business-icon">
@@ -707,6 +739,98 @@
         <div class="brand-gold"></div>
     </div>
 
-    <script src="js/main.js?v=17"></script>
+    <script src="js/main.js?v=19"></script>
+    <script>
+    // Measurement script injected for debugging
+    (function() {
+        function sendMeasurements() {
+            var mc = document.querySelector('.main-container');
+            var contact = document.querySelector('#contact');
+            var brandBar = document.querySelector('.brand-bar');
+            
+            var data = {
+                // 1. document.documentElement height
+                htmlScrollHeight: document.documentElement.scrollHeight,
+                htmlClientHeight: document.documentElement.clientHeight,
+                
+                // 2. document.body height
+                bodyScrollHeight: document.body.scrollHeight,
+                bodyClientHeight: document.body.clientHeight,
+                
+                // 3. main-container height
+                mainContainerScrollHeight: mc ? mc.scrollHeight : null,
+                mainContainerClientHeight: mc ? mc.clientHeight : null,
+                
+                // 4. Last visible section (contact) height
+                contactScrollHeight: contact ? contact.scrollHeight : null,
+                contactClientHeight: contact ? contact.clientHeight : null,
+                
+                // 5. offsetTop and offsetHeight of contact section
+                contactOffsetTop: contact ? contact.offsetTop : null,
+                contactOffsetHeight: contact ? contact.offsetHeight : null,
+                
+                // 6. window.innerHeight vs document.documentElement.clientHeight
+                windowInnerHeight: window.innerHeight,
+                docElementClientHeight: document.documentElement.clientHeight,
+                
+                // 7. Body and html background colors
+                bodyBackgroundColor: getComputedStyle(document.body).backgroundColor,
+                htmlBackgroundColor: getComputedStyle(document.documentElement).backgroundColor,
+                
+                // 8. brand-bar info
+                brandBar: brandBar ? {
+                    tagName: brandBar.tagName,
+                    className: brandBar.className,
+                    display: getComputedStyle(brandBar).display,
+                    position: getComputedStyle(brandBar).position,
+                    bottom: getComputedStyle(brandBar).bottom,
+                    height: brandBar.offsetHeight,
+                    zIndex: getComputedStyle(brandBar).zIndex,
+                    rectTop: brandBar.getBoundingClientRect().top,
+                    rectBottom: brandBar.getBoundingClientRect().bottom
+                } : null,
+                
+                // Additional: page bottom info
+                pageBottom: {
+                    bodyBottom: document.body.getBoundingClientRect().bottom,
+                    scrollHeight: document.documentElement.scrollHeight,
+                    windowHeight: window.innerHeight
+                },
+                
+                // Elements after contact (inside main-container)
+                elementsAfterContact: (function() {
+                    if (!contact || !mc) return null;
+                    var children = Array.from(mc.children);
+                    var idx = children.indexOf(contact);
+                    if (idx === -1 || idx >= children.length - 1) return 'NONE (contact is last child)';
+                    return children.slice(idx + 1).map(function(el) {
+                        var style = getComputedStyle(el);
+                        return {
+                            tag: el.tagName,
+                            id: el.id,
+                            className: el.className,
+                            offsetHeight: el.offsetHeight,
+                            display: style.display,
+                            bgColor: style.backgroundColor
+                        };
+                    });
+                })()
+            };
+            
+            // Send via image beacon (cross-origin compatible)
+            var img = new Image();
+            img.src = 'http://localhost:8081/collect?data=' + encodeURIComponent(JSON.stringify(data));
+        }
+        
+        // Send after page fully loaded
+        if (document.readyState === 'complete') {
+            setTimeout(sendMeasurements, 2000);
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(sendMeasurements, 2000);
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

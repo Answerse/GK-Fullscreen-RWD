@@ -517,13 +517,36 @@ document.addEventListener('DOMContentLoaded', function() {
     let businessInterval = null;
     
     function switchBusiness(index) {
-        businessCards.forEach((c, i) => {
+        const prevActiveCard = document.querySelector('.business-card.active');
+        const prevIndex = prevActiveCard ? parseInt(prevActiveCard.dataset.index) : -1;
+        
+        businessCards.forEach((card) => {
+            card.classList.remove('activating', 'deactivating', 'sibling-inactive');
+        });
+        
+        if (prevActiveCard && prevIndex !== index) {
+            prevActiveCard.classList.add('deactivating');
+        }
+        
+        if (businessCards[index]) {
+            businessCards[index].classList.add('activating');
+        }
+        
+        businessCards.forEach((card, i) => {
             if (i === index) {
-                c.classList.add('active');
+                card.classList.add('active');
             } else {
-                c.classList.remove('active');
+                card.classList.remove('active');
+                card.classList.add('sibling-inactive');
             }
         });
+        
+        setTimeout(() => {
+            businessCards.forEach((card) => {
+                card.classList.remove('activating', 'deactivating', 'sibling-inactive');
+            });
+        }, 450);
+        
         if (businessBgImgs.length >= 2 && businessBgImages[index]) {
             const current = document.querySelector('.business-bg-img[data-active="true"]');
             const next = current === businessBgImgs[0] ? businessBgImgs[1] : businessBgImgs[0];
@@ -601,6 +624,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (entry.isIntersecting) {
                 section.classList.add('in-view');
+                section.classList.add('active-section');
+                
+                document.querySelectorAll('.section').forEach(s => {
+                    if (s !== section) {
+                        s.classList.remove('active-section');
+                    }
+                });
                 
                 if (!heroFirstLoad && section.id === 'hero') {
                     heroSlider.start();
@@ -629,6 +659,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 section.classList.remove('in-view');
+                section.classList.remove('active-section');
                 
                 if (section.id === 'hero') {
                     heroSlider.stop();
