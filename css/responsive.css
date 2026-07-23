@@ -204,38 +204,59 @@
     }
 
     .business-list {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
     }
 
     .business-card {
-        grid-column: span 1 !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
     }
 
     .business-card.active {
-        grid-column: span 2 !important;
+        flex: 2.5 1 0 !important;
     }
 
-    .contact-info-wrapper {
-        flex-direction: column !important;
-        gap: 40px !important;
+    .contact-cards-row {
+        flex-wrap: wrap !important;
+        gap: 16px !important;
+        margin-top: 60px !important;
     }
 
-    .contact-info-card {
-        width: 100% !important;
+    .contact-card-item {
+        flex: 1 1 calc(50% - 8px) !important;
+        min-height: 220px !important;
     }
 
-    .contact-map-wrapper {
-        min-height: 300px !important;
+    .contact-card-divider {
+        display: none !important;
     }
 
-    .contact-title {
-        font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+    .contact-card-icon-wrap {
+        padding: 24px !important;
     }
 
-    .contact-section .section-inner {
-        padding: 20px 30px 40px !important;
+    .contact-card-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .contact-card-value {
+        font-size: 18px !important;
+    }
+
+    .contact-card-item:last-child .contact-card-value {
+        font-size: 15px !important;
+    }
+
+    .contact-content {
+        padding-top: 120px !important;
+    }
+
+    .contact-section {
+        height: 100vh !important;
     }
 
     .video-section {
@@ -452,7 +473,8 @@
         position: static !important;
         transform: none !important;
         width: 48px !important;
-        height: 48px !important;
+        height: 72px !important;
+        border-radius: 4px !important;
     }
 
     .products-nav-prev,
@@ -471,10 +493,13 @@
 
     .products-indicators {
         padding-top: 20px !important;
+        width: 100% !important;
     }
 
     .products-indicator {
         width: 100px !important;
+        height: 6px !important;
+        border-radius: 3px !important;
     }
 }
 
@@ -583,44 +608,69 @@
     }
 
     .business-list {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
     }
 
     .business-card {
-        grid-column: span 1 !important;
+        flex: 1 1 calc(50% - 6px) !important;
+        min-width: 0 !important;
+        height: 340px !important;
     }
 
-    .contact-info-wrapper {
-        flex-direction: column !important;
-        gap: 30px !important;
+    .business-card.active {
+        flex: 1 1 100% !important;
     }
 
-    .contact-info-card {
-        width: 100% !important;
-        padding: 24px !important;
+    .contact-cards-row {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        margin-top: 48px !important;
     }
 
-    .contact-info-item {
-        gap: 16px !important;
-        padding: 10px 0 !important;
+    .contact-card-item {
+        flex: 1 1 calc(50% - 6px) !important;
+        min-height: 200px !important;
+        gap: 14px !important;
     }
 
-    .contact-info-label {
-        font-size: 16px !important;
+    .contact-card-divider {
+        display: none !important;
     }
 
-    .contact-info-value {
-        font-size: 20px !important;
+    .contact-card-icon-wrap {
+        padding: 20px !important;
     }
 
-    .contact-info-item-last .contact-info-value {
-        font-size: 16px !important;
+    .contact-card-icon {
+        width: 28px !important;
+        height: 28px !important;
     }
 
-    .contact-map-wrapper {
-        min-height: 250px !important;
+    .contact-card-label {
+        font-size: 14px !important;
+    }
+
+    .contact-card-value {
+        font-size: 17px !important;
+        max-width: 180px !important;
+    }
+
+    .contact-card-item:last-child .contact-card-value {
+        font-size: 14px !important;
+        max-width: 220px !important;
+    }
+
+    .contact-content {
+        padding-top: 100px !important;
+    }
+
+    .contact-map-pin {
+        left: 65% !important;
+        top: 55% !important;
+        transform: scale(0.8) !important;
     }
 
     .contact-copyright {
@@ -628,6 +678,17 @@
         gap: 8px !important;
         padding: 16px 0 !important;
         text-align: center !important;
+    }
+
+    .contact-friend-links {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        padding: 12px 0 !important;
+    }
+
+    .contact-friend-links-list {
+        gap: 16px !important;
     }
 
     .video-section {
@@ -675,11 +736,7 @@
         font-size: clamp(1.25rem, 4vw, 2rem) !important;
     }
 
-    .contact-section .section-inner {
-        padding: 16px 20px 32px !important;
-    }
-
-    .banner-content {
+    .contact-title {
         padding: 30px 20px !important;
     }
 
@@ -815,7 +872,8 @@
         position: static !important;
         transform: none !important;
         width: 44px !important;
-        height: 44px !important;
+        height: 60px !important;
+        border-radius: 4px !important;
     }
 
     .products-nav-prev,
@@ -834,10 +892,13 @@
 
     .products-indicators {
         padding-top: 15px !important;
+        width: 100% !important;
     }
 
     .products-indicator {
         width: 60px !important;
+        height: 6px !important;
+        border-radius: 3px !important;
     }
 
     .contact-copyright {
@@ -849,6 +910,25 @@
 
     .contact-copyright-text,
     .contact-icp-text {
+        font-size: 11px !important;
+    }
+
+    .contact-friend-links {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 12px 0 !important;
+    }
+
+    .contact-friend-links-title {
+        font-size: 14px !important;
+    }
+
+    .contact-friend-links-list {
+        gap: 12px !important;
+    }
+
+    .contact-friend-link {
         font-size: 11px !important;
     }
 
@@ -897,10 +977,6 @@
     }
 
     .contact-section .section-inner {
-        padding: 12px 15px 24px !important;
-    }
-
-    .footer-links-container {
         flex-direction: column !important;
         gap: 20px !important;
     }
@@ -960,11 +1036,15 @@
     }
 
     .business-list {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
     }
 
     .business-card {
-        grid-column: span 1 !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        height: 320px !important;
     }
 
     .business-name {
@@ -1048,6 +1128,76 @@
 
     .contact-info-text {
         font-size: 13px !important;
+    }
+
+    .contact-cards-row {
+        flex-direction: column !important;
+        gap: 16px !important;
+        margin-top: 40px !important;
+    }
+
+    .contact-card-item {
+        flex: 1 1 100% !important;
+        min-height: 180px !important;
+        gap: 12px !important;
+    }
+
+    .contact-card-divider {
+        display: none !important;
+    }
+
+    .contact-card-icon-wrap {
+        padding: 20px !important;
+    }
+
+    .contact-card-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .contact-card-label {
+        font-size: 14px !important;
+    }
+
+    .contact-card-value {
+        font-size: 16px !important;
+        max-width: 160px !important;
+    }
+
+    .contact-card-item:last-child .contact-card-value {
+        font-size: 14px !important;
+        max-width: 200px !important;
+    }
+
+    .contact-content {
+        padding-top: 80px !important;
+    }
+
+    .contact-map-pin {
+        transform: scale(0.6) !important;
+        left: 60% !important;
+        top: 50% !important;
+    }
+
+    .contact-friend-links {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 10px 0 !important;
+    }
+
+    .contact-friend-links-title {
+        font-size: 13px !important;
+    }
+
+    .contact-friend-links-list {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .contact-friend-link {
+        font-size: 11px !important;
     }
 
     .footer-links-container {

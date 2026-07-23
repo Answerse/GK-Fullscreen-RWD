@@ -1,33 +1,38 @@
 /* ========================================
    国控站群企业网站 - 动效样式表
-   Scroll Entrance / Hero Zoom / Fade
+   职责：仅管理入场/出场动效（初始隐藏态 + transition）
+   视觉值（opacity/transform/color/background 等）归 style.css
    ======================================== */
 
 /* ========================================
    页面模块进场动效
+   父级 .section 无 .in-view → 隐藏 | 有 .in-view → 过渡到 style.css 默认值
    ======================================== */
-.section .section-inner {
+
+/* 区块容器 — 初始隐藏 */
+.section:not(.in-view) .section-inner {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* 区块容器 — 入场后只开启动效，视觉值由 style.css 提供 */
 .section.in-view .section-inner {
-    opacity: 1;
-    transform: translateY(0);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.section .section-header {
+/* 区块标题 — 初始隐藏 */
+.section:not(.in-view) .section-header {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* 区块标题 — 入场后只开启动效 */
 .section.in-view .section-header {
-    opacity: 1;
-    transform: translateY(0);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
@@ -36,7 +41,7 @@
    走进企业 - 图片横向滑动动效
    进场从右到左，出场从左到右
    ======================================== */
-.about-image {
+.section:not(.in-view) .about-image {
     opacity: 0;
     transform: translateX(80px);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -44,8 +49,6 @@
 }
 
 .section.in-view .about-image {
-    opacity: 1;
-    transform: translateX(0);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s,
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
 }
@@ -54,94 +57,89 @@
    广糖新闻 - 卡片逐张横向滑动动效
    进场从右到左，出场从左到右
    ======================================== */
-.news-card {
+.section:not(.in-view) .news-card {
     opacity: 0;
-    /* transform: translateX(80px); */
+    transform: translateX(80px);
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* 出场逐张延迟 */
-.news-card:nth-child(1) { transition-delay: 0s; }
-.news-card:nth-child(2) { transition-delay: 0.15s; }
-.news-card:nth-child(3) { transition-delay: 0.3s; }
+.section:not(.in-view) .news-card:nth-child(1) { transition-delay: 0s; }
+.section:not(.in-view) .news-card:nth-child(2) { transition-delay: 0.15s; }
+.section:not(.in-view) .news-card:nth-child(3) { transition-delay: 0.3s; }
 
+/* 入场 — 只开启动效，视觉效果来自 style.css */
 .section.in-view .news-card {
-    opacity: 1;
-    transform: translateX(0);
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 进场逐张延迟（等待 section-inner 动画完成后开始） */
+/* 进场逐张延迟 */
 .section.in-view .news-card:nth-child(1) { transition-delay: 0.4s; }
 .section.in-view .news-card:nth-child(2) { transition-delay: 0.55s; }
 .section.in-view .news-card:nth-child(3) { transition-delay: 0.7s; }
 
 /* ========================================
-   主营业务 - 卡片逐张上下滑动动效
-   进场从下到上渐入，出场从上到下渐出
+   主营业务 - 卡片逐张上下滑动动效（入场）
+   进场从下到上渐入，入场完成后转交手风琴
    ======================================== */
-.business-card {
+
+/* 初始隐藏（父级 .section 未进入视口） */
+.section:not(.in-view) .business-card {
     opacity: 0;
     transform: translateY(50px) scale(0.88);
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.business-card:nth-child(1) { transition-delay: 0s; }
-.business-card:nth-child(2) { transition-delay: 0.1s; }
-.business-card:nth-child(3) { transition-delay: 0.2s; }
-.business-card:nth-child(4) { transition-delay: 0.3s; }
+.section:not(.in-view) .business-card:nth-child(1) { transition-delay: 0s; }
+.section:not(.in-view) .business-card:nth-child(2) { transition-delay: 0.1s; }
+.section:not(.in-view) .business-card:nth-child(3) { transition-delay: 0.2s; }
+.section:not(.in-view) .business-card:nth-child(4) { transition-delay: 0.3s; }
 
+/* 入场完成 + 手风琴交互 — 只管理 transition，视觉值全部来自 style.css */
 .section.in-view .business-card {
-    opacity: 0.85;
-    transform: translateY(0) scale(0.96);
-    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.4s ease-out,
+                background 0.4s ease-out,
+                color 0.3s ease-out,
+                transform 0.4s ease-out,
+                box-shadow 0.4s ease-out,
+                border-color 0.4s ease-out,
+                flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s !important;
 }
 
-.section.in-view .business-card.active {
-    opacity: 1;
-    transform: translateY(-8px) scale(1.03);
-}
-
-.section.in-view .business-card:nth-child(1) { transition-delay: 0.3s; }
-.section.in-view .business-card:nth-child(2) { transition-delay: 0.4s; }
-.section.in-view .business-card:nth-child(3) { transition-delay: 0.5s; }
-.section.in-view .business-card:nth-child(4) { transition-delay: 0.6s; }
+/* 注意：.active / .sibling-inactive / .activating / .deactivating 的视觉值
+   以及相应的 hover 效果，全部在 style.css 中定义。此处不重复。 */
 
 /* ========================================
    媒体聚焦 - 卡片逐张上下滑动动效
    进场从上到下渐入，出场从下到上渐出
    ======================================== */
-.media-card {
+.section:not(.in-view) .media-card {
     opacity: 0;
     transform: translateY(-60px);
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.media-card:nth-child(1) { transition-delay: 0s; }
-.media-card:nth-child(2) { transition-delay: 0.15s; }
+.section:not(.in-view) .media-card:nth-child(1) { transition-delay: 0s; }
+.section:not(.in-view) .media-card:nth-child(2) { transition-delay: 0.15s; }
 
 .section.in-view .media-card {
-    opacity: 1;
-    transform: translateY(0);
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 进场逐张延迟（等待 section-inner 动画完成后开始） */
+/* 进场逐张延迟 */
 .section.in-view .media-card:nth-child(1) { transition-delay: 0.4s; }
 .section.in-view .media-card:nth-child(2) { transition-delay: 0.55s; }
 
 /* ========================================
    联系方式 - 弹窗缩放淡入动效
-   进场透明+放大 0%→100%, 60%→100%, ease-in
-   出场反向
    ======================================== */
-.contact-popup {
+.section:not(.in-view) .contact-popup {
     opacity: 0;
     transform: scale(0.6);
     transition: opacity 0.6s cubic-bezier(0.42, 0, 1, 1),
@@ -149,8 +147,6 @@
 }
 
 .section.in-view .contact-popup {
-    opacity: 1;
-    transform: scale(1);
     transition: opacity 0.6s cubic-bezier(0.42, 0, 1, 1) 0.5s,
                 transform 0.6s cubic-bezier(0.42, 0, 1, 1) 0.5s;
 }
@@ -158,7 +154,7 @@
 /* ========================================
    媒体聚焦 - 轮播区从左向右渐入动效
    ======================================== */
-.media-carousel {
+.section:not(.in-view) .media-carousel {
     opacity: 0;
     transform: translateX(-60px);
     transition: opacity 0.6s cubic-bezier(0.42, 0, 1, 1),
@@ -166,15 +162,9 @@
 }
 
 .section.in-view .media-carousel {
-    opacity: 1;
-    transform: translateX(0);
     transition: opacity 0.6s cubic-bezier(0.42, 0, 1, 1) 0.3s,
                 transform 0.6s cubic-bezier(0.42, 0, 1, 1) 0.3s;
 }
-
-/* 媒体-列表区在轮播区之后动 */
-.section.in-view .media-card:nth-child(1) { transition-delay: 0.6s; }
-.section.in-view .media-card:nth-child(2) { transition-delay: 0.75s; }
 
 /* ========================================
    首屏轮播图 - 缩放动效

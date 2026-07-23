@@ -1,0 +1,117 @@
+/* ========================================
+   国控站群企业网站 - SVG 图标样式表
+   ======================================== */
+
+/* ========================================
+   基础 SVG 图标尺寸
+   ======================================== */
+.svg-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.svg-icon-sm {
+    width: 24px;
+    height: 24px;
+}
+
+.svg-icon-md {
+    width: 28px;
+    height: 28px;
+}
+
+.svg-icon-lg {
+    width: 32px;
+    height: 32px;
+}
+
+/* ========================================
+   SVG 图标颜色
+   ======================================== */
+.svg-icon-white {
+    fill: #ffffff;
+}
+
+.svg-icon-dark {
+    fill: #101215;
+}
+
+.svg-icon-red {
+    fill: #DA0001;
+}
+
+.svg-icon-gold {
+    fill: #C5A55A;
+}
+
+.svg-icon-gray {
+    fill: #6B7280;
+}
+
+/* ========================================
+   SVG 图标滤镜颜色控制
+   用于 <img> 标签加载的 SVG 文件
+   ======================================== */
+
+/* 将图标颜色转为 #DA0001 (红色) */
+.filter-red {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7499%) hue-rotate(359deg) brightness(102%) contrast(101%);
+}
+
+/* 将图标颜色转为 #B10001 (暗红) */
+.filter-dark-red {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7499%) hue-rotate(359deg) brightness(78%) contrast(101%);
+}
+
+/* 将图标颜色转为 rgba(16, 18, 21, 0.5) 半透明 */
+.filter-gray-half {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(0%) hue-rotate(190deg) brightness(94%) contrast(89%);
+}
+
+/* 将图标颜色转为 #6B7280 (灰色) */
+.filter-gray-mid {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(8%) saturate(0%) hue-rotate(190deg) brightness(92%) contrast(87%);
+}
+
+/* 将图标颜色转为 #111827 (深色) */
+.filter-dark {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(12%) saturate(1918%) hue-rotate(195deg) brightness(95%) contrast(90%);
+}
+
+/* ========================================
+   装饰性 SVG 图标 (用于品牌/标题装饰等)
+   ======================================== */
+.brand-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   导航箭头图标
+   ======================================== */
+.arrow-inline-svg {
+    width: 24px;
+    height: 22px;
+    display: block;
+}
+
+/* ========================================
+   地图定位图标
+   ======================================== */
+.contact-map-pin-marker {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ========================================
+   联系方式图标
+   ======================================== */
+.contact-card-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}

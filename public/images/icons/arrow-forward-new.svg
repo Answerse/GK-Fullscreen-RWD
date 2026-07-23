@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22">
-  <path id="arrow" fill-rule="evenodd" clip-rule="evenodd" d="M23.6804 10.1376C24.1064 10.5637 24.1064 11.2544 23.6804 11.6804L13.8622 21.4985C13.4362 21.9246 12.7455 21.9246 12.3195 21.4985C11.8934 21.0725 11.8934 20.3818 12.3195 19.9558L20.2753 11.9999H1.0909C0.488414 11.9999 -2.63357e-08 11.5115 0 10.909C2.63357e-08 10.3065 0.488415 9.81813 1.0909 9.81813H20.2753L12.3195 1.86229C11.8934 1.43626 11.8934 0.745542 12.3195 0.319518C12.7455 -0.106506 13.4362 -0.106506 13.8622 0.319518L23.6804 10.1376Z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="arrow" transform="matrix(1,0,0,1,0,1)">
+        <path d="M23.68,10.138C24.106,10.564 24.106,11.254 23.68,11.68L13.862,21.499C13.436,21.925 12.746,21.925 12.32,21.499C11.893,21.073 11.893,20.382 12.32,19.956L20.275,12L1.091,12C0.488,12 -0,11.512 0,10.909C0,10.307 0.488,9.818 1.091,9.818L20.275,9.818L12.32,1.862C11.893,1.436 11.893,0.746 12.32,0.32C12.746,-0.107 13.436,-0.107 13.862,0.32L23.68,10.138Z"/>
+    </g>
 </svg>

@@ -612,6 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (rect.top < window.innerHeight && rect.bottom > 0) {
             if (section.id !== 'achievement') {
                 section.classList.add('in-view');
+                section.classList.add('active-section');
             }
         }
     });
@@ -674,12 +675,41 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { 
-        threshold: 0.25,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1
     });
     
     document.querySelectorAll('.section').forEach(section => {
         scrollObserver.observe(section);
+    });
+    
+    // 兜底：scroll 和 resize 后重新检查所有 section 的可见性
+    let fallbackTimer = null;
+    function checkSectionsVisibility() {
+        document.querySelectorAll('.section').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                if (!section.classList.contains('in-view')) {
+                    section.classList.add('in-view');
+                }
+            } else {
+                if (section.classList.contains('in-view')) {
+                    section.classList.remove('in-view');
+                    section.classList.remove('active-section');
+                    if (section.id === 'hero') { heroSlider.stop(); }
+                }
+            }
+        });
+    }
+    function debouncedCheck() {
+        if (fallbackTimer) clearTimeout(fallbackTimer);
+        fallbackTimer = setTimeout(checkSectionsVisibility, 200);
+    }
+    window.addEventListener('scroll', debouncedCheck, { passive: true });
+    window.addEventListener('resize', debouncedCheck, { passive: true });
+    // 页面完全加载后再检查一次
+    window.addEventListener('load', () => {
+        setTimeout(checkSectionsVisibility, 500);
+        setTimeout(checkSectionsVisibility, 1500);
     });
     
     // ==========================================
@@ -935,7 +965,7 @@ document.addEventListener('DOMContentLoaded', function() {
         track: document.querySelector('.finance-business-track'),
         prevBtn: document.querySelector('.finance-business-nav-prev'),
         nextBtn: document.querySelector('.finance-business-nav-next'),
-        indicators: document.querySelectorAll('.finance-business-indicator'),
+        indicatorsContainer: document.querySelector('.finance-business-indicators'),
         cards: document.querySelectorAll('.finance-business-card'),
         currentPage: 0,
         cardsPerPage: 4,
@@ -943,10 +973,33 @@ document.addEventListener('DOMContentLoaded', function() {
         timer: null,
         interval: 5000,
         
+        getCardsPerPage() {
+            const w = window.innerWidth;
+            if (w <= 767) return 1;
+            if (w <= 1199) return 2;
+            return 4;
+        },
+        
         init() {
             if (!this.track || this.cards.length === 0) return;
+            this.cardsPerPage = this.getCardsPerPage();
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            this.createIndicators();
             this.bindEvents();
             this.updatePosition();
+            this.startAutoPlay();
+        },
+        
+        createIndicators() {
+            if (!this.indicatorsContainer) return;
+            this.indicatorsContainer.innerHTML = '';
+            for (let i = 0; i < this.totalPages; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'finance-business-indicator' + (i === 0 ? ' active' : '');
+                dot.dataset.index = i;
+                this.indicatorsContainer.appendChild(dot);
+            }
+            this.indicators = this.indicatorsContainer.querySelectorAll('.finance-business-indicator');
         },
         
         goTo(page) {
@@ -967,10 +1020,24 @@ document.addEventListener('DOMContentLoaded', function() {
         
         updatePosition() {
             if (!this.track) return;
+            const prevTotalPages = this.totalPages;
+            this.cardsPerPage = this.getCardsPerPage();
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            if (this.currentPage >= this.totalPages) {
+                this.currentPage = 0;
+            }
+            if (this.totalPages !== prevTotalPages && this.indicatorsContainer) {
+                this.createIndicators();
+            }
+            // 桌面端固定卡片宽度 360px，响应式动态计算
+            const fixedCardWidth = 360;
             const slider = this.track.parentElement;
             const sliderWidth = slider.clientWidth;
             const gap = 40;
-            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            const minSpace = fixedCardWidth * this.cardsPerPage + gap * (this.cardsPerPage - 1);
+            const cardWidth = (this.cardsPerPage >= 4 && sliderWidth >= minSpace)
+                ? fixedCardWidth
+                : (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
                 card.style.width = cardWidth + 'px';
                 card.style.flex = 'none';
@@ -979,9 +1046,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
             this.track.style.transform = 'translateX(' + offset + 'px)';
+            this.updateIndicators();
         },
         
         updateIndicators() {
+            if (!this.indicators) return;
             this.indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === this.currentPage);
             });
@@ -1016,12 +1085,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            this.indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    this.goTo(index);
-                    this.resetAutoPlay();
+            if (this.indicatorsContainer) {
+                this.indicatorsContainer.addEventListener('click', (e) => {
+                    const indicator = e.target.closest('.finance-business-indicator');
+                    if (indicator && indicator.dataset.index !== undefined) {
+                        this.goTo(parseInt(indicator.dataset.index));
+                        this.resetAutoPlay();
+                    }
                 });
-            });
+            }
             
             if (carousel) {
                 carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
@@ -1054,8 +1126,16 @@ document.addEventListener('DOMContentLoaded', function() {
         timer: null,
         interval: 4000,
         
+        getCardsPerPage() {
+            const w = window.innerWidth;
+            if (w <= 767) return 1;
+            if (w <= 1199) return 2;
+            return 4;
+        },
+        
         init() {
             if (!this.track || this.cards.length === 0) return;
+            this.cardsPerPage = this.getCardsPerPage();
             this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
             this.createIndicators();
             this.bindEvents();
@@ -1093,10 +1173,24 @@ document.addEventListener('DOMContentLoaded', function() {
         
         updatePosition() {
             if (!this.track) return;
+            const prevTotalPages = this.totalPages;
+            this.cardsPerPage = this.getCardsPerPage();
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            if (this.currentPage >= this.totalPages) {
+                this.currentPage = 0;
+            }
+            if (this.totalPages !== prevTotalPages && this.indicatorsContainer) {
+                this.createIndicators();
+            }
+            // 桌面端固定卡片宽度 330px，响应式动态计算
+            const fixedCardWidth = 330;
             const slider = this.track.parentElement;
             const sliderWidth = slider.clientWidth;
             const gap = 40;
-            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            const minSpace = fixedCardWidth * this.cardsPerPage + gap * (this.cardsPerPage - 1);
+            const cardWidth = (this.cardsPerPage >= 4 && sliderWidth >= minSpace)
+                ? fixedCardWidth
+                : (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
                 card.style.width = cardWidth + 'px';
                 card.style.flex = 'none';
@@ -1105,32 +1199,33 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
             this.track.style.transform = 'translateX(' + offset + 'px)';
+            this.updateIndicators();
         },
-        
+
         updateIndicators() {
             if (!this.indicators) return;
             this.indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === this.currentPage);
             });
         },
-        
+
         startAutoPlay() {
             this.stopAutoPlay();
             this.timer = setInterval(() => this.next(), this.interval);
         },
-        
+
         stopAutoPlay() {
             if (this.timer) {
                 clearInterval(this.timer);
                 this.timer = null;
             }
         },
-        
+
         resetAutoPlay() {
             this.stopAutoPlay();
             this.startAutoPlay();
         },
-        
+
         bindEvents() {
             const carousel = document.querySelector('.products-carousel');
             

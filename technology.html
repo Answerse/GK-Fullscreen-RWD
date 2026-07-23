@@ -7,9 +7,10 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>广西糖业集团 - 科技板块</title>
-    <link rel="stylesheet" href="css/style.css?v=33">
+    <link rel="stylesheet" href="css/style.css?v=40">
+    <link rel="stylesheet" href="css/svg-icons.css?v=1">
 		<link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/animations.css?v=5">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body data-page-theme="blue">
@@ -27,6 +28,7 @@
         <a href="#business" class="mobile-nav-item" data-section="business">主营业务</a>
         <a href="#news" class="mobile-nav-item" data-section="news">新闻动态</a>
         <a href="#media" class="mobile-nav-item" data-section="media">信息公开</a>
+        <a href="#video" class="mobile-nav-item" data-section="video">企业视频</a>
         <a href="#contact" class="mobile-nav-item" data-section="contact">联系方式</a>
     </nav>
     
@@ -56,6 +58,10 @@
             <a href="#achievement" class="nav-item home-nav-item" data-section="achievement">
                 <span class="nav-dot home-nav-dot"></span>
                 <span class="nav-text home-nav-text">成果展示</span>
+            </a>
+            <a href="#video" class="nav-item home-nav-item" data-section="video">
+                <span class="nav-dot home-nav-dot"></span>
+                <span class="nav-text home-nav-text">企业视频</span>
             </a>
             <a href="#contact" class="nav-item home-nav-item" data-section="contact">
                 <span class="nav-dot home-nav-dot"></span>
@@ -148,7 +154,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="about-content">
+                <div class="section-content-wrap">
+                    <div class="about-content">
                     <div class="about-image">
                         <img src="public/images/tech-about-image.webp" alt="广西化工研究院">
                     </div>
@@ -183,13 +190,14 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- 媒体聚焦 -->
         <section id="media" class="section media-section tech-media-section">
             <div class="tech-media-bg">
-                <img src="public/images/tech-media-bg-original.svg" alt="">
+                <div class="tech-media-dot"></div>
             </div>
             <div class="section-inner">
                 <div class="section-header">
@@ -204,7 +212,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="media-body">
+                <div class="section-content-wrap">
+                    <div class="media-body">
                     <div class="media-list">
                         <a href="article-detail.html?theme=blue" class="media-card">
                             <div class="date-display">
@@ -238,8 +247,8 @@
                         <div class="media-slider">
                             <img src="public/images/article-focus-1.webp" alt="焦点图">
                             <button class="media-slider-nav media-slider-prev" aria-label="上一张">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-lg svg-icon-white">
-                                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-lg svg-icon-white">
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
                                 </svg>
                             </button>
                             <button class="media-slider-nav media-slider-next" aria-label="下一张">
@@ -260,6 +269,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -278,7 +288,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="tech-business-list">
+                <div class="section-content-wrap">
+                    <div class="tech-business-list">
                     <div class="tech-business-card tech-business-card-0 active" data-index="0">
                         <div class="tech-business-img-container">
                             <img src="public/images/tech-business-1.webp" alt="兽药">
@@ -337,6 +348,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -359,7 +371,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="tech-achievement-list">
+                <div class="section-content-wrap">
+                    <div class="tech-achievement-list">
                     <a href="article-detail.html?theme=blue" class="tech-achievement-card">
                         <div class="tech-achievement-image">
                             <img src="public/images/tech-achievement-1.webp" alt="甲·四氯钠 | 氧氟·丁草胺">
@@ -417,61 +430,141 @@
                         </div>
                     </a>
                 </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 企业视频 -->
+        <section id="video" class="section video-section">
+            <div class="video-bg"></div>
+            <div class="video-bg-dot"></div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <h2 class="section-title">企业视频</h2>
+                    </div>
+                    <a href="article-list-blue.html" class="more-link">
+                        <span>查看更多</span>
+                        <span class="arrow-circle">
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        </span>
+                    </a>
+                </div>
+                <div class="section-content-wrap">
+                    <div class="video-content">
+                    <div class="video-player-wrap">
+                        <div class="video-player-frame">
+                            <div class="video-player-area">
+                                <img src="public/images/video-cover.png" alt="视频封面" class="video-poster">
+                                <div class="video-poster-overlay"></div>
+                                
+                                <button class="video-play-btn" aria-label="播放">
+                                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="video-play-icon">
+                                        <path d="M16 8L48 32L16 56V8Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+
+                                <div class="video-info-bar">
+                                    <div class="video-progress-wrap">
+                                        <span class="video-time">00:25</span>
+                                        <div class="video-slider-wrap">
+                                            <div class="video-slider-bg-left"></div>
+                                            <div class="video-slider-thumb"></div>
+                                            <div class="video-slider-bg-right"></div>
+                                        </div>
+                                        <span class="video-time">01:25</span>
+                                    </div>
+                                    <button class="video-fullscreen-btn" aria-label="全屏">
+                                        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4H12V8H8V12H4V4ZM4 20H8V24H12V28H4V20ZM20 4H24V8H28V12H24V8H20V4ZM20 20H24V28H28V24H24V20H20Z" fill="#FFFFFF"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </section>
 
         <!-- 联系方式 -->
         <section id="contact" class="section contact-section">
-            <div class="contact-map">
-                <img src="public/images/contact-map-bg.png" alt="地图">
+            <div class="contact-map-bg">
+                <img src="public/images/contact-map-figma.png" alt="" class="contact-map-bg-img">
                 <div class="contact-map-overlay"></div>
+                <div class="contact-map-pin">
+                    <div class="contact-map-pin-icon">
+                        <img src="public/images/icon-address.svg" alt="" class="contact-map-pin-marker">
+                    </div>
+                    <div class="contact-map-pin-circle"></div>
+                </div>
             </div>
-            <div class="section-inner">
+            <div class="contact-content">
                 <div class="section-header">
                     <div class="section-title-wrap">
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">联系方式</h2>
                     </div>
                 </div>
-                <div class="contact-info-row">
-                    <div class="contact-info-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.3818 6.66699C23.7606 6.66699 24.107 6.88094 24.2764 7.21973L27.8818 14.4287C27.9597 14.5844 28.0769 14.7179 28.2217 14.8145L34.2188 18.8125C35.3315 19.5543 36 20.8033 36 22.1406V30C36 31.1046 35.1046 32 34 32H3.33398C2.22941 32 1.33398 31.1046 1.33398 30V22.1406C1.33402 20.8033 2.00247 19.5543 3.11523 18.8125L9.1123 14.8145C9.2571 14.7179 9.37432 14.5844 9.45215 14.4287L13.0576 7.21973C13.227 6.88094 13.5734 6.66699 13.9521 6.66699H23.3818ZM18.667 16C15.7216 16 13.3342 18.3876 13.334 21.333C13.334 24.2785 15.7215 26.667 18.667 26.667C21.6125 26.667 24 24.2785 24 21.333C23.9998 18.3876 21.6124 16 18.667 16ZM29.334 0C33.7521 0.000173569 37.334 3.58183 37.334 8V11C37.334 11.5522 36.8861 11.9998 36.334 12H29.2852C28.9064 12 28.56 11.786 28.3906 11.4473L25.8867 6.43848C25.5479 5.76106 24.8551 5.33303 24.0977 5.33301H13.2363C12.4789 5.33303 11.7861 5.76106 11.4473 6.43848L8.94336 11.4473C8.77396 11.786 8.42758 12 8.04883 12H1C0.447865 11.9998 0 11.5522 0 11V8C5.96046e-08 3.58183 3.58187 0.000175953 8 0H29.334Z" fill="currentColor"/></svg>
+                <div class="contact-cards-row">
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-phone.svg" alt="电话" class="contact-card-icon">
                         </div>
-                        <span class="contact-info-label">电话</span>
-                        <span class="contact-info-value">0771-2213661 ｜2223939</span>
+                        <span class="contact-card-label">电话</span>
+                        <span class="contact-card-value">0771-2213661 ｜2223939</span>
                     </div>
-                    <div class="contact-divider"></div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.998 27.8192C37.998 28.9433 37.0865 29.8545 35.9624 29.8547H2.03557C0.911508 29.8546 0 28.9433 0 27.8192V6.78557L13.6039 15.5312L6.42577 22.7103C6.2272 22.9091 6.22709 23.2313 6.42577 23.43C6.62446 23.6285 6.94668 23.6285 7.14538 23.43L14.4806 16.0937L16.7974 17.5836C18.1385 18.4457 19.8595 18.4457 21.2006 17.5836L23.5164 16.0937L30.8526 23.43C31.0513 23.6285 31.3735 23.6285 31.5722 23.43C31.7709 23.2313 31.7708 22.9091 31.5722 22.7103L24.3931 15.5312L37.998 6.78557V27.8192ZM35.9624 0C37.0865 0.000178476 37.998 0.911467 37.998 2.03557V4.87225C37.998 5.21857 37.8212 5.54175 37.5299 5.72902L21.2006 16.2259C19.8595 17.088 18.1385 17.088 16.7974 16.2259L0.468142 5.72902C0.176829 5.54175 0 5.21857 0 4.87225V2.03557C7.27977e-07 0.911468 0.91151 0.000179082 2.03557 0H35.9624Z" fill="currentColor"/></svg>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-email.svg" alt="邮箱" class="contact-card-icon">
                         </div>
-                        <span class="contact-info-label">邮箱</span>
-                        <span class="contact-info-value">gxbgspzh@163.com</span>
+                        <span class="contact-card-label">邮箱</span>
+                        <span class="contact-card-value">gxbgspzh@163.com</span>
                     </div>
-                    <div class="contact-divider"></div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.66797 17.3333C2.66797 14.3878 5.05578 12 8.0013 12H32.0013C34.9468 12 37.3346 14.3878 37.3346 17.3333V25.3333C37.3346 28.2789 34.9468 30.6667 32.0013 30.6667V25.3333C32.0013 23.1242 30.2104 21.3333 28.0013 21.3333H12.0013C9.79216 21.3333 8.0013 23.1242 8.0013 25.3333L8.0013 30.6667C5.05578 30.6667 2.66797 28.2789 2.66797 25.3333V17.3333ZM29.3346 16C28.5983 16 28.0013 16.597 28.0013 17.3333C28.0013 18.0697 28.5983 18.6667 29.3346 18.6667H30.668C31.4043 18.6667 32.0013 18.0697 32.0013 17.3333C32.0013 16.597 31.4043 16 30.668 16H29.3346Z" fill="currentColor"/><path d="M9.33203 5.33317C9.33203 3.86041 10.5259 2.6665 11.9987 2.6665H27.9987C29.4715 2.6665 30.6654 3.86041 30.6654 5.33317V9.33317C30.6654 10.0696 30.0684 10.6665 29.332 10.6665H10.6654C9.92898 10.6665 9.33203 10.0696 9.33203 9.33317V5.33317Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.33203 25.3332C9.33203 23.8604 10.5259 22.6665 11.9987 22.6665H27.9987C29.4715 22.6665 30.6654 23.8604 30.6654 25.3332V34.6665C30.6654 36.1393 29.4715 37.3332 27.9987 37.3332H11.9987C10.5259 37.3332 9.33203 36.1393 9.33203 34.6665V25.3332ZM15.9987 27.9998C15.2623 27.9998 14.6654 28.5968 14.6654 29.3332C14.6654 30.0695 15.2623 30.6665 15.9987 30.6665H23.9987C24.7351 30.6665 25.332 30.0695 25.332 29.3332C25.332 28.5968 24.7351 27.9998 23.9987 27.9998H15.9987Z" fill="currentColor"/></svg>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-fax-1.svg" alt="传真" class="contact-card-icon">
                         </div>
-                        <span class="contact-info-label">传真</span>
-                        <span class="contact-info-value">0771-2213661 ｜2223939</span>
+                        <span class="contact-card-label">传真</span>
+                        <span class="contact-card-value">0771-2213661 ｜2223939</span>
                     </div>
-                    <div class="contact-divider"></div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="38" height="35" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.9817 0C34.0969 0 35.001 0.904057 35.001 2.01927V10.7688H36.684C37.2414 10.769 37.6935 11.2211 37.6937 11.7784V32.9807C37.6937 34.0958 36.7895 34.9998 35.6744 35H2.01927C0.904207 34.9998 0 34.0958 0 32.9807V11.7784C0.000177588 11.2211 0.452289 10.769 1.00963 10.7688H2.69269V2.01927C2.69269 0.904057 3.59674 6.01789e-08 4.71196 0H32.9817ZM6.39501 2.6917C5.83751 2.6917 5.38555 3.14388 5.38537 3.70134V20.9144C5.38537 21.2968 5.60139 21.6465 5.94343 21.8176L18.3953 28.044C18.6795 28.186 19.0142 28.186 19.2984 28.044L31.7502 21.8176C32.0923 21.6465 32.3083 21.2968 32.3083 20.9144V3.70134C32.3081 3.14388 31.8562 2.6917 31.2987 2.6917H6.39501ZM26.5867 17.1638H11.106V15.1445H26.5867V17.1638ZM26.5867 10.4326H11.106V8.41329H26.5867V10.4326Z" fill="currentColor"/></svg>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-postcode.svg" alt="邮编" class="contact-card-icon">
                         </div>
-                        <span class="contact-info-label">邮编</span>
-                        <span class="contact-info-value">gxbgspzh@163.com</span>
+                        <span class="contact-card-label">邮编</span>
+                        <span class="contact-card-value">530072</span>
                     </div>
-                    <div class="contact-divider"></div>
-                    <div class="contact-info-item contact-info-item-address">
-                        <div class="contact-icon-wrap">
-                            <svg width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.36732 4.36756C10.1907 -1.45585 19.6328 -1.45585 25.4562 4.36756C31.2792 10.191 31.2793 19.6321 25.4562 25.4554L14.9117 35.9999L4.36732 25.4554C-1.45583 19.6321 -1.45572 10.191 4.36732 4.36756ZM14.9117 8.13357C11.917 8.13357 9.48961 10.561 9.48961 13.5557C9.48961 16.5505 11.917 18.9779 14.9117 18.9779C17.9065 18.9779 20.3339 16.5505 20.3339 13.5557C20.3339 10.561 17.9065 8.13357 14.9117 8.13357Z" fill="currentColor"/></svg>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-address.svg" alt="地址" class="contact-card-icon">
                         </div>
-                        <span class="contact-info-label">地址</span>
-                        <span class="contact-info-value">南宁市青秀区七星路135号广西农垦大厦4楼</span>
+                        <span class="contact-card-label">地址</span>
+                        <span class="contact-card-value">南宁市青秀区七星路135号广西农垦大厦4楼</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div class="contact-footer-inner">
+                    <div class="contact-friend-links">
+                        <span class="contact-friend-links-title">友情链接：</span>
+                        <div class="contact-friend-links-list">
+                            <a href="#" class="contact-friend-link">广西国控资本运营集团有限责任公司</a>
+                            <a href="#" class="contact-friend-link">北部湾产权交易所集团股份有限公司</a>
+                            <a href="#" class="contact-friend-link">广西宏桂资本运营集团有限公司</a>
+                            <a href="#" class="contact-friend-link">广西产投资本运营集团有限公司</a>
+                            <a href="#" class="contact-friend-link">广西宏桂资产经营集团有限公司</a>
+                        </div>
+                    </div>
+                    <div class="contact-copyright">
+                        <span class="contact-copyright-text">Copyright © 2026-2028 广西国控资本运营集团有限责任公司 版权所有</span>
+                        <span class="contact-icp-text">桂公网安备45010802000562号</span>
                     </div>
                 </div>
             </div>

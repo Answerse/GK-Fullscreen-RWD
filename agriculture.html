@@ -7,16 +7,17 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>广西糖业集团 - 农业板块</title>
-    <link rel="stylesheet" href="css/style.css?v=36">
-		<link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=56">
+    <link rel="stylesheet" href="css/svg-icons.css?v=1">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css?v=5">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .media-section .section-title {
             color: var(--color-bg-white);
         }
         .media-section .more-link {
-            background: rgba(255, 255, 255, 0.2);
+            /* background: rgba(255, 255, 255, 0.2); */
         }
         .media-section .more-link:hover {
             background: rgba(255, 255, 255, 0.3);
@@ -168,7 +169,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="about-content">
+                <div class="section-content-wrap">
+                    <div class="about-content">
                     <div class="about-text">
                         <div class="about-desc">
                             <p class="about-desc-text">
@@ -207,6 +209,7 @@
                         <img src="public/images/about-sugarcane.webp" alt="甘蔗田制糖厂航拍图">
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -228,7 +231,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="news-list">
+                <div class="section-content-wrap">
+                    <div class="news-list">
                     <a href="article-detail.html?theme=green" class="news-card">
                         <div class="news-image">
                             <img src="public/images/news-1.webp" alt="新闻图片">
@@ -290,6 +294,7 @@
                         </div>
                     </a>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -301,14 +306,15 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">媒体聚焦</h2>
                     </div>
-                    <a href="article-list.html" class="more-link">
+                    <a href="article-list.html" class="more-link light">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
                         </span>
                     </a>
                 </div>
-                <div class="media-body">
+                <div class="section-content-wrap">
+                    <div class="media-body">
                     <div class="media-carousel">
                         <div class="media-slider">
                             <img src="public/images/article-focus-1.webp" alt="焦点图">
@@ -365,6 +371,7 @@
                         </a>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -385,8 +392,8 @@
                         </span>
                     </a>
                 </div>
-
-                <div class="video-content">
+                <div class="section-content-wrap">
+                    <div class="video-content">
                     <div class="video-player-wrap">
                         <div class="video-player-frame">
                             <div class="video-player-area">
@@ -419,6 +426,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -441,7 +449,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="business-list">
+                <div class="section-content-wrap">
+                    <div class="business-list">
                     <div class="business-card active" data-index="0">
                         <div class="business-card-bg">
                             <div class="business-card-bg-img" style="background-image: url('public/images/business-bg-1.png')"></div>
@@ -527,12 +536,12 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- 产品展示 -->
         <section id="products" class="section products-section">
-            <div class="products-bg"></div>
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
@@ -546,133 +555,131 @@
                         </span>
                     </a>
                 </div>
-                <div class="products-carousel">
-                    <button class="products-nav products-nav-prev" aria-label="上一页">
-                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                        </svg>
-                    </button>
-                    <div class="products-slider">
-                        <div class="products-track">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-1.webp" alt="甲·四氯钠 | 氧氟·丁草胺">
+                <div class="section-content-wrap">
+                    <div class="products-carousel">
+                        <button class="products-nav products-nav-prev" aria-label="上一页">
+                            <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        </button>
+                        <div class="products-slider">
+                            <div class="products-track">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-1.webp" alt="250ml小瓶装甘蔗朗姆酒">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">250ml小瓶装甘蔗朗姆酒</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">甲·四氯钠 | 氧氟·丁草胺</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-2.webp" alt="甘蔗专用有机复合肥">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">甘蔗专用有机复合肥</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-2.webp" alt="10%益多邦">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-3.webp" alt="一级精制白砂糖">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">一级精制白砂糖</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">10%益多邦</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-4.webp" alt="原生木浆商用卷纸">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">原生木浆商用卷纸</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-3.webp" alt="三晶牲血素">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-5.webp" alt="多晶老土冰糖">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">多晶老土冰糖</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">三晶牲血素</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-6.webp" alt="纯白方块方糖">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">纯白方块方糖</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-4.webp" alt="草士 | 金桉福">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-7.webp" alt="500ml甘蔗原汁朗姆酒">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">500ml甘蔗原汁朗姆酒</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">草士 | 金桉福</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-5.webp" alt="甲·四氯钠 | 氧氟·丁草胺">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">甲·四氯钠 | 氧氟·丁草胺</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-6.webp" alt="10%益多邦">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">10%益多邦</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-7.webp" alt="三晶牲血素">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">三晶牲血素</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="public/images/product-8.webp" alt="草士 | 金桉福">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-name">草士 | 金桉福</h3>
-                                    <a href="#" class="product-more">
-                                        <span>了解更多</span>
-                                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                        </svg>
-                                    </a>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="public/images/product-8.webp" alt="古法熬制红糖块">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">古法熬制红糖块</h3>
+                                        <a href="#" class="product-more">
+                                            <span>了解更多</span>
+                                            <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
+                                                <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <button class="products-nav products-nav-next" aria-label="下一页">
+                            <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        </button>
                     </div>
-                    <button class="products-nav products-nav-next" aria-label="下一页">
-                        <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm">
-                            <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                        </svg>
-                    </button>
                 </div>
                 <div class="products-indicators"></div>
             </div>
@@ -680,54 +687,81 @@
 
         <!-- 联系方式 -->
         <section id="contact" class="section contact-section">
-            <div class="section-inner">
-                <div class="contact-header">
-                    <div class="contact-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="contact-brand-icon">
-                        <h2 class="contact-title">联系方式</h2>
+            <div class="contact-map-bg">
+                <img src="public/images/contact-map-figma.png" alt="" class="contact-map-bg-img">
+                <div class="contact-map-overlay"></div>
+                <div class="contact-map-pin">
+                    <div class="contact-map-pin-icon">
+                        <img src="public/images/icon-address.svg" alt="" class="contact-map-pin-marker">
+                    </div>
+                    <div class="contact-map-pin-circle"></div>
+                </div>
+            </div>
+            <div class="contact-content">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <h2 class="section-title">联系方式</h2>
                     </div>
                 </div>
-                <div class="contact-info-wrapper">
-                    <div class="contact-info-card">
-                        <div class="contact-info-item">
-                            <img src="public/images/icon-phone.svg" alt="电话" class="contact-info-icon">
-                            <span class="contact-info-label">电话</span>
-                            <span class="contact-info-value">0771-2814653</span>
+                <div class="contact-cards-row">
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-phone.svg" alt="电话" class="contact-card-icon">
                         </div>
-                        <div class="contact-info-item">
-                            <img src="public/images/icon-email.svg" alt="邮箱" class="contact-info-icon">
-                            <span class="contact-info-label">邮箱</span>
-                            <span class="contact-info-value">0771-2814653</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <img src="public/images/icon-postcode.svg" alt="邮编" class="contact-info-icon">
-                            <span class="contact-info-label">邮编</span>
-                            <span class="contact-info-value">530072</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <img src="public/images/icon-fax-1.svg" alt="传真" class="contact-info-icon">
-                            <span class="contact-info-label">传真</span>
-                            <span class="contact-info-value">0771-530072</span>
-                        </div>
-                        <div class="contact-info-item contact-info-item-last">
-                            <img src="public/images/icon-address.svg" alt="公司地址" class="contact-info-icon">
-                            <span class="contact-info-label">公司地址</span>
-                            <span class="contact-info-value">广西南宁市民族大道32号</span>
-                        </div>
+                        <span class="contact-card-label">电话</span>
+                        <span class="contact-card-value">0771-2213661 ｜2223939</span>
                     </div>
-                    <div class="contact-map-wrapper">
-                        <img src="public/images/contact-map-figma.png" alt="地图" class="contact-map-img">
-                        <div class="contact-map-popup">
-                            <div class="contact-map-popup-icon">
-                                <img src="public/images/icon-address.svg" alt="位置标记" class="contact-map-marker-icon">
-                            </div>
-                            <div class="contact-map-popup-circle"></div>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-email.svg" alt="邮箱" class="contact-card-icon">
                         </div>
+                        <span class="contact-card-label">邮箱</span>
+                        <span class="contact-card-value">gxbgspzh@163.com</span>
+                    </div>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-fax-1.svg" alt="传真" class="contact-card-icon">
+                        </div>
+                        <span class="contact-card-label">传真</span>
+                        <span class="contact-card-value">0771-2213661 ｜2223939</span>
+                    </div>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-postcode.svg" alt="邮编" class="contact-card-icon">
+                        </div>
+                        <span class="contact-card-label">邮编</span>
+                        <span class="contact-card-value">530072</span>
+                    </div>
+                    <div class="contact-card-divider"></div>
+                    <div class="contact-card-item">
+                        <div class="contact-card-icon-wrap">
+                            <img src="public/images/icon-address.svg" alt="地址" class="contact-card-icon">
+                        </div>
+                        <span class="contact-card-label">地址</span>
+                        <span class="contact-card-value">南宁市青秀区七星路135号广西农垦大厦4楼</span>
                     </div>
                 </div>
-                <div class="contact-copyright">
-                    <span class="contact-copyright-text">Copyright © 2026-2028 广西国控资本运营集团有限责任公司 版权所有</span>
-                    <span class="contact-icp-text">桂公网安备45010802000562号</span>
+            </div>
+            <div class="contact-footer">
+                <div class="contact-footer-inner">
+                    <div class="contact-friend-links">
+                        <span class="contact-friend-links-title">友情链接：</span>
+                        <div class="contact-friend-links-list">
+                            <a href="#" class="contact-friend-link">广西国控资本运营集团有限责任公司</a>
+                            <a href="#" class="contact-friend-link">北部湾产权交易所集团股份有限公司</a>
+                            <a href="#" class="contact-friend-link">广西宏桂资本运营集团有限公司</a>
+                            <a href="#" class="contact-friend-link">广西产投资本运营集团有限公司</a>
+                            <a href="#" class="contact-friend-link">广西宏桂资产经营集团有限公司</a>
+                        </div>
+                    </div>
+                    <div class="contact-copyright">
+                        <span class="contact-copyright-text">Copyright © 2026-2028 广西国控资本运营集团有限责任公司 版权所有</span>
+                        <span class="contact-icp-text">桂公网安备45010802000562号</span>
+                    </div>
                 </div>
             </div>
         </section>
