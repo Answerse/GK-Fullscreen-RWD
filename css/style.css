@@ -1438,7 +1438,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     gap: 64px;
     align-items: stretch;
     flex: 1;
-    min-height: 0;
+    max-height: 720PX;
 }
 
 .about-text {
