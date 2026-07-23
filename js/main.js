@@ -126,40 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustStatFontSize();
     window.addEventListener('resize', adjustStatFontSize);
     
-    // 动态计算关于我们文字行数
-    function adjustAboutTextClamp() {
-        const desc = document.querySelector('.about-desc');
-        const textEl = document.querySelector('.about-desc-text');
-        if (!desc || !textEl) return;
-        
-        // 获取可用高度（去掉2px缓冲避免溢出）
-        const availableHeight = desc.clientHeight - 2;
-        if (availableHeight <= 0) return;
-        
-        // 获取行高 (font-size 20px * line-height 1.6)
-        const lineHeight = 32;
-        const lines = Math.floor(availableHeight / lineHeight);
-        
-        textEl.style.webkitLineClamp = Math.max(1, lines);
-    }
     
-    // 初始计算 + 窗口变化重新计算
-    adjustAboutTextClamp();
-    window.addEventListener('resize', adjustAboutTextClamp);
-    
-    // section 进入视图后重新计算（动画完成后）
-    const aboutSection = document.querySelector('.about-section');
-    if (aboutSection) {
-        const aboutObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // 等进入动画完成后再计算
-                    setTimeout(adjustAboutTextClamp, 900);
-                }
-            });
-        }, { threshold: 0.3 });
-        aboutObserver.observe(aboutSection);
-    }
     function updateActiveNav() {
         const scrollTop = mainContainer.scrollTop;
         const viewportHeight = window.innerHeight;

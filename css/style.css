@@ -1460,6 +1460,8 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     color: var(--color-text-primary);
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     overflow: hidden;
 }
 
@@ -1633,6 +1635,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
     border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
@@ -2952,7 +2955,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
 .business-section .section-inner {
     position: relative;
     z-index: 2;
-    gap: 8%;
+    /* gap: 8%; */
 }
 
 .business-list {
@@ -3875,16 +3878,16 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
 }
 
 .products-indicator {
-    height: 6px;
-    border-radius: 3px;
-    flex: 1;
+    width:16px;
+    height: 16px;
+    border-radius: 99px;
     background: rgba(16, 18, 21, 0.2);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .products-indicator.active {
-    background: #166534;
+    background: #202425a6;
 }
 
 /* ========================================
