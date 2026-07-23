@@ -1800,7 +1800,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     bottom: 0;
     width: 857px;
     height: 800px;
-    background-image: url('../public/images/tech-media-dot.png');
+    background-image: url('../public/images/tech-media-dot.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.3;
@@ -2086,7 +2086,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     /* top: 200px; */
     width: 1392px;
     height: 800px;
-    background-image: url('../public/images/video-bg-dot.png');
+    background-image: url('../public/images/video-bg-dot.webp');
     background-size: cover;
     background-position: center center;
     pointer-events: none;
@@ -2326,7 +2326,7 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     top: 112px;
     width: 857px;
     height: 800px;
-    background-image: url('../public/images/video-bg-dot.png');
+    background-image: url('../public/images/video-bg-dot.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
