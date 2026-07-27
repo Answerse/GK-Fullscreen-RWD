@@ -624,6 +624,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             animateValue(num, 0, endValue, 180);
                         }, index * 200);
                     });
+                    
+                    const aboutEnterpriseStatNums = section.querySelectorAll('.about-enterprise-stat-num');
+                    aboutEnterpriseStatNums.forEach((num, index) => {
+                        setTimeout(() => {
+                            const endValue = parseFloat(num.getAttribute('data-value'));
+                            num.innerHTML = '0';
+                            animateValue(num, 0, endValue, 180);
+                        }, index * 200);
+                    });
                 }
             } else {
                 section.classList.remove('in-view');
@@ -634,7 +643,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 if (section.id === 'about') {
-                    const statNums = section.querySelectorAll('.stat-num, .finance-stat-num');
+                    const statNums = section.querySelectorAll('.stat-num, .finance-stat-num, .about-enterprise-stat-num');
                     statNums.forEach(num => {
                         num.innerHTML = '0';
                     });

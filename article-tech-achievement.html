@@ -6,10 +6,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>广西糖业集团 - 新闻中心</title>
+    <title>广西糖业集团 - 成果展示</title>
     <link rel="stylesheet" href="css/style.css?v=33">
     <link rel="stylesheet" href="css/svg-icons.css?v=1">
-		<link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css?v=5">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -29,17 +29,21 @@
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">走进企业</span>
             </a>
-            <a href="article-list-blue.html" class="nav-item sub-nav-item active" data-section="news">
+            <a href="article-list-blue.html" class="nav-item sub-nav-item" data-section="news">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">新闻中心</span>
             </a>
-            <a href="technology.html#media" class="nav-item sub-nav-item" data-section="media">
+            <a href="article-tech-media.html" class="nav-item sub-nav-item" data-section="media">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">媒体聚焦</span>
             </a>
-            <a href="technology.html#business" class="nav-item sub-nav-item" data-section="business">
+            <a href="article-tech-business.html" class="nav-item sub-nav-item" data-section="business">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">主营业务</span>
+            </a>
+            <a href="article-tech-achievement.html" class="nav-item sub-nav-item active" data-section="achievement">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">成果展示</span>
             </a>
             <a href="technology.html#contact" class="nav-item sub-nav-item" data-section="contact">
                 <span class="nav-dot sub-nav-dot"></span>
@@ -90,13 +94,14 @@
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-arrow">
                                 <path d="M6 2L10 8L6 14" stroke="#101215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span class="breadcrumb-item active">新闻列表</span>
+                            <span class="breadcrumb-item active">成果展示</span>
                         </nav>
                     </div>
                     <div class="nav-tabs">
-                        <button class="nav-tab" data-tab="style1">网格列表</button>
-                        <button class="nav-tab active" data-tab="style2">垂直列表</button>
-                        <button class="nav-tab" data-tab="style3">无图列表</button>
+                        <button class="nav-tab active" data-tab="all">全部成果</button>
+                        <button class="nav-tab" data-tab="patent">专利技术</button>
+                        <button class="nav-tab" data-tab="award">获奖项目</button>
+                        <button class="nav-tab" data-tab="new">新品发布</button>
                     </div>
                 </div>
             </div>
@@ -108,14 +113,14 @@
                 <!-- 推荐区域 -->
                 <div class="news-recommend">
                     <div class="recommend-image">
-                        <img src="public/images/article-focus-1.webp" alt="推荐图片">
+                        <img src="public/images/tech-achievement-1.webp" alt="推荐图片">
                     </div>
                     <div class="recommend-info">
                         <div class="recommend-content">
-                            <span class="recommend-date">2026/03/02</span>
-                            <h2 class="recommend-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h2>
-                            <p class="recommend-desc">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
-                            <a href="#" class="recommend-btn">
+                            <span class="recommend-date">2026/06</span>
+                            <h2 class="recommend-title">甲·四氯钠除草剂研发项目通过验收</h2>
+                            <p class="recommend-desc">广西化工研究院承担的"甲·四氯钠高效除草剂研发及产业化"项目顺利通过自治区科技厅组织的专家验收。该项目研制的新型除草剂具有用量少、除草效果好、对环境友好等突出优点，对推动广西农业绿色高质量发展具有重要意义。</p>
+                            <a href="article-detail.html?theme=blue" class="recommend-btn">
                                 <span>阅读详情</span>
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9997 29.9995C23.2839 29.9995 29.9995 23.2839 29.9995 14.9997C29.9995 6.71561 23.2839 0 14.9997 0C6.71561 0 0 6.71561 0 14.9997C0 23.2839 6.71561 29.9995 14.9997 29.9995ZM13.6145 7.81368C13.1961 7.39527 12.5177 7.39527 12.0993 7.81368C11.6809 8.23209 11.6809 8.91047 12.0993 9.32888L17.7702 14.9997L12.0993 20.6706C11.6809 21.089 11.6809 21.7674 12.0993 22.1858C12.5177 22.6042 13.1961 22.6042 13.6145 22.1858L20.043 15.7573C20.4614 15.3389 20.4614 14.6605 20.043 14.2421L13.6145 7.81368Z" fill="#FFFFFF"/>
@@ -138,12 +143,12 @@
                         <div class="news-text-blue">
                             <div class="news-header-blue">
                                 <div class="date-display theme-blue">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 6</span>
+                                    <span>01</span>
                                 </div>
                                 <div class="news-body-blue">
-                                    <h3 class="news-title-blue">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
-                                    <p class="news-desc-blue">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
+                                    <h3 class="news-title-blue">甲·四氯钠除草剂研发项目通过验收</h3>
+                                    <p class="news-desc-blue">广西化工研究院承担的"甲·四氯钠高效除草剂研发及产业化"项目顺利通过自治区科技厅验收。该除草剂具有高效、低毒、低残留等特点，对甘蔗田主要杂草防效达95%以上。</p>
                                     <span class="news-more-blue">
                                         <span>了解更多</span>
                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -154,19 +159,19 @@
                             </div>
                         </div>
                         <div class="news-image-blue">
-                            <img src="public/images/news-1.webp" alt="新闻图片">
+                            <img src="public/images/tech-achievement-1.webp" alt="新闻图片">
                         </div>
                     </a>
                     <a href="article-detail.html?theme=blue" class="news-item-blue">
                         <div class="news-text-blue">
                             <div class="news-header-blue">
                                 <div class="date-display theme-blue">
-                                    <span>2025/ 3</span>
-                                    <span>21</span>
+                                    <span>2026/ 6</span>
+                                    <span>01</span>
                                 </div>
                                 <div class="news-body-blue">
-                                    <h3 class="news-title-blue">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
-                                    <p class="news-desc-blue">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
+                                    <h3 class="news-title-blue">氧氟·丁草胺复配技术获国家发明专利</h3>
+                                    <p class="news-desc-blue">化工院自主研发的氧氟·丁草胺复配除草剂技术获得国家发明专利授权。该复配技术通过优化配比和制剂工艺，显著提升了除草效果和作物安全性，在甘蔗、桉树等经济作物上应用前景广阔。</p>
                                     <span class="news-more-blue">
                                         <span>了解更多</span>
                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,19 +182,19 @@
                             </div>
                         </div>
                         <div class="news-image-blue">
-                            <img src="public/images/news-2.webp" alt="新闻图片">
+                            <img src="public/images/tech-achievement-2.webp" alt="新闻图片">
                         </div>
                     </a>
                     <a href="article-detail.html?theme=blue" class="news-item-blue">
                         <div class="news-text-blue">
                             <div class="news-header-blue">
                                 <div class="date-display theme-blue">
-                                    <span>2025/ 3</span>
-                                    <span>23</span>
+                                    <span>2026/ 5</span>
+                                    <span>01</span>
                                 </div>
                                 <div class="news-body-blue">
-                                    <h3 class="news-title-blue">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
-                                    <p class="news-desc-blue">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
+                                    <h3 class="news-title-blue">10%益多邦新型肥料推广应用</h3>
+                                    <p class="news-desc-blue">化工院研发的10%益多邦新型微肥在广西多个甘蔗种植区推广应用，该肥料通过科学配比微量元素，有效促进了甘蔗的生长发育和糖分积累，平均增产达8%以上，受到蔗农广泛好评。</p>
                                     <span class="news-more-blue">
                                         <span>了解更多</span>
                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,19 +205,19 @@
                             </div>
                         </div>
                         <div class="news-image-blue">
-                            <img src="public/images/news-3.webp" alt="新闻图片">
+                            <img src="public/images/tech-achievement-3.webp" alt="新闻图片">
                         </div>
                     </a>
                     <a href="article-detail.html?theme=blue" class="news-item-blue">
                         <div class="news-text-blue">
                             <div class="news-header-blue">
                                 <div class="date-display theme-blue">
-                                    <span>2025/ 3</span>
-                                    <span>08</span>
+                                    <span>2026/ 5</span>
+                                    <span>01</span>
                                 </div>
                                 <div class="news-body-blue">
-                                    <h3 class="news-title-blue">广糖集团党委开展树立和践行正确政绩观学习教育读书班</h3>
-                                    <p class="news-desc-blue">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
+                                    <h3 class="news-title-blue">三晶牲血素兽药产品市场占有率突破新高</h3>
+                                    <p class="news-desc-blue">化工院核心兽药产品三晶牲血素（右旋糖酐铁注射液）在广西及华南地区市场占有率持续攀升，已突破40%的市场份额。该产品对防治仔猪缺铁性贫血效果显著，是广大养殖户的首选品牌。</p>
                                     <span class="news-more-blue">
                                         <span>了解更多</span>
                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -223,19 +228,19 @@
                             </div>
                         </div>
                         <div class="news-image-blue">
-                            <img src="public/images/news-1.webp" alt="新闻图片">
+                            <img src="public/images/tech-achievement-4.webp" alt="新闻图片">
                         </div>
                     </a>
                     <a href="article-detail.html?theme=blue" class="news-item-blue">
                         <div class="news-text-blue">
                             <div class="news-header-blue">
                                 <div class="date-display theme-blue">
-                                    <span>2025/ 3</span>
-                                    <span>15</span>
+                                    <span>2026/ 4</span>
+                                    <span>01</span>
                                 </div>
                                 <div class="news-body-blue">
-                                    <h3 class="news-title-blue">广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
-                                    <p class="news-desc-blue">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
+                                    <h3 class="news-title-blue">草士牌除草剂获广西名牌产品称号</h3>
+                                    <p class="news-desc-blue">化工院旗下"草士"牌系列除草剂被广西质量技术监督局授予"广西名牌产品"称号。该系列产品以优异的除草效果和稳定的质量赢得了广大用户认可，在区内市场具有较高的品牌知名度和美誉度。</p>
                                     <span class="news-more-blue">
                                         <span>了解更多</span>
                                         <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -246,7 +251,76 @@
                             </div>
                         </div>
                         <div class="news-image-blue">
-                            <img src="public/images/news-2.webp" alt="新闻图片">
+                            <img src="public/images/tech-business-1.webp" alt="新闻图片">
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=blue" class="news-item-blue">
+                        <div class="news-text-blue">
+                            <div class="news-header-blue">
+                                <div class="date-display theme-blue">
+                                    <span>2026/ 4</span>
+                                    <span>01</span>
+                                </div>
+                                <div class="news-body-blue">
+                                    <h3 class="news-title-blue">金桉福环保型防锈颜料出口欧盟</h3>
+                                    <p class="news-desc-blue">化工院自主研发的金桉福品牌环保型防锈颜料成功打开欧盟市场，首批产品已通过欧盟REACH法规认证并顺利出口德国。这标志着化工院在高端防锈颜料领域的国际竞争力迈上了新台阶。</p>
+                                    <span class="news-more-blue">
+                                        <span>了解更多</span>
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3657 7.43431C17.6781 7.74673 17.6781 8.25327 17.3657 8.56569L10.1657 15.7657C9.85327 16.0781 9.34673 16.0781 9.03432 15.7657C8.7219 15.4533 8.7219 14.9467 9.03432 14.6343L14.8686 8.8H0.8C0.358173 8.8 -1.93129e-08 8.44183 0 8C1.93129e-08 7.55817 0.358173 7.2 0.8 7.2H14.8686L9.03432 1.36569C8.7219 1.05327 8.7219 0.546734 9.03432 0.234315C9.34673 -0.0781049 9.85327 -0.0781049 10.1657 0.234315L17.3657 7.43431Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-image-blue">
+                            <img src="public/images/tech-business-2.webp" alt="新闻图片">
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=blue" class="news-item-blue">
+                        <div class="news-text-blue">
+                            <div class="news-header-blue">
+                                <div class="date-display theme-blue">
+                                    <span>2026/ 3</span>
+                                    <span>01</span>
+                                </div>
+                                <div class="news-body-blue">
+                                    <h3 class="news-title-blue">国家级专精特新"小巨人"企业复审通过</h3>
+                                    <p class="news-desc-blue">广西化工研究院顺利通过国家级专精特新"小巨人"企业复审。化工院长期专注于精细化工领域的技术创新和产品研发，在防锈颜料、兽药、农药等细分市场具有显著竞争优势。</p>
+                                    <span class="news-more-blue">
+                                        <span>了解更多</span>
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3657 7.43431C17.6781 7.74673 17.6781 8.25327 17.3657 8.56569L10.1657 15.7657C9.85327 16.0781 9.34673 16.0781 9.03432 15.7657C8.7219 15.4533 8.7219 14.9467 9.03432 14.6343L14.8686 8.8H0.8C0.358173 8.8 -1.93129e-08 8.44183 0 8C1.93129e-08 7.55817 0.358173 7.2 0.8 7.2H14.8686L9.03432 1.36569C8.7219 1.05327 8.7219 0.546734 9.03432 0.234315C9.34673 -0.0781049 9.85327 -0.0781049 10.1657 0.234315L17.3657 7.43431Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-image-blue">
+                            <img src="public/images/tech-business-3.webp" alt="新闻图片">
+                        </div>
+                    </a>
+                    <a href="article-detail.html?theme=blue" class="news-item-blue">
+                        <div class="news-text-blue">
+                            <div class="news-header-blue">
+                                <div class="date-display theme-blue">
+                                    <span>2026/ 3</span>
+                                    <span>01</span>
+                                </div>
+                                <div class="news-body-blue">
+                                    <h3 class="news-title-blue">广西科技进步奖一等奖：新型防锈材料</h3>
+                                    <p class="news-desc-blue">化工院"新型无毒无害白色防锈颜料关键技术研发及产业化"项目荣获广西科学技术进步奖一等奖。该成果攻克了防锈颜料无毒化处理的技术难题，整体技术达到国际先进水平。</p>
+                                    <span class="news-more-blue">
+                                        <span>了解更多</span>
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3657 7.43431C17.6781 7.74673 17.6781 8.25327 17.3657 8.56569L10.1657 15.7657C9.85327 16.0781 9.34673 16.0781 9.03432 15.7657C8.7219 15.4533 8.7219 14.9467 9.03432 14.6343L14.8686 8.8H0.8C0.358173 8.8 -1.93129e-08 8.44183 0 8C1.93129e-08 7.55817 0.358173 7.2 0.8 7.2H14.8686L9.03432 1.36569C8.7219 1.05327 8.7219 0.546734 9.03432 0.234315C9.34673 -0.0781049 9.85327 -0.0781049 10.1657 0.234315L17.3657 7.43431Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-image-blue">
+                            <img src="public/images/tech-achievement-1.webp" alt="新闻图片">
                         </div>
                     </a>
                 </div>

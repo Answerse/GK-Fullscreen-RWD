@@ -24,7 +24,7 @@
     <!-- 移动端全屏导航菜单 -->
     <nav class="mobile-nav">
         <a href="#hero" class="mobile-nav-item" data-section="hero">首页</a>
-        <a href="#about" class="mobile-nav-item" data-section="about">走进企业</a>
+        <a href="#about" class="mobile-nav-item" data-section="about">企业简介</a>
         <a href="#business" class="mobile-nav-item" data-section="business">主营业务</a>
         <a href="#news" class="mobile-nav-item" data-section="news">新闻动态</a>
         <a href="#media" class="mobile-nav-item" data-section="media">信息公开</a>
@@ -45,7 +45,7 @@
             </a>
             <a href="#about" class="nav-item home-nav-item" data-section="about">
                 <span class="nav-dot home-nav-dot"></span>
-                <span class="nav-text home-nav-text">走进企业</span>
+                <span class="nav-text home-nav-text">企业简介</span>
             </a>
             <a href="#business" class="nav-item home-nav-item" data-section="business">
                 <span class="nav-dot home-nav-dot"></span>
@@ -137,7 +137,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">企业简介</h2>
                     </div>
-                    <a href="about-enterprise.html?theme=gold" class="more-link">
+                    <a href="about-enterprise-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -368,7 +368,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">信息公开</h2>
                     </div>
-                    <a href="article-list-gold.html" class="more-link">
+                    <a href="article-finance-info.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -452,7 +452,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">企业视频</h2>
                     </div>
-                    <a href="article-list.html" class="more-link">
+                    <a href="article-list-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -464,31 +464,7 @@
                     <div class="video-player-wrap">
                         <div class="video-player-frame">
                             <div class="video-player-area">
-                                <img src="public/images/video-cover.webp" alt="视频封面" class="video-poster">
-                                <div class="video-poster-overlay"></div>
-                                
-                                <button class="video-play-btn" aria-label="播放">
-                                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="video-play-icon">
-                                        <path d="M16 8L48 32L16 56V8Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-
-                                <div class="video-info-bar">
-                                    <div class="video-progress-wrap">
-                                        <span class="video-time">00:25</span>
-                                        <div class="video-slider-wrap">
-                                            <div class="video-slider-bg-left"></div>
-                                            <div class="video-slider-thumb"></div>
-                                            <div class="video-slider-bg-right"></div>
-                                        </div>
-                                        <span class="video-time">01:25</span>
-                                    </div>
-                                    <button class="video-fullscreen-btn" aria-label="全屏">
-                                        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4H12V8H8V12H4V4ZM4 20H8V24H12V28H4V20ZM20 4H24V8H28V12H24V8H20V4ZM20 20H24V28H28V24H24V20H20Z" fill="#FFFFFF"/>
-                                        </svg>
-                                    </button>
-                                </div>
+                                <video class="video-element" src="public/Videos/Video1.mp4" controls preload="metadata" playsinline></video>
                             </div>
                         </div>
                     </div>

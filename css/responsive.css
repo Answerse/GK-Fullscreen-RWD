@@ -404,6 +404,22 @@
         font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
     }
 
+    .search-bar {
+        min-width: auto !important;
+        padding: 0 12px !important;
+        gap: 12px !important;
+        margin-left: 12px !important;
+    }
+
+    .search-text {
+        font-size: 14px !important;
+    }
+
+    .search-icon {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
     .about-content {
         flex-direction: column !important;
         gap: 30px !important;
@@ -781,6 +797,23 @@
 
     .about-section-title {
         font-size: clamp(1.25rem, 4vw, 2rem) !important;
+    }
+
+    .search-bar {
+        min-width: auto !important;
+        padding: 0 10px !important;
+        gap: 8px !important;
+        margin-left: 8px !important;
+        height: 32px !important;
+    }
+
+    .search-text {
+        font-size: 12px !important;
+    }
+
+    .search-icon {
+        width: 16px !important;
+        height: 16px !important;
     }
 
     .search-container {

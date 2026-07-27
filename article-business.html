@@ -6,10 +6,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>广西糖业集团 - 新闻中心</title>
+    <title>广西糖业集团 - 主营业务</title>
     <link rel="stylesheet" href="css/style.css?v=33">
     <link rel="stylesheet" href="css/svg-icons.css?v=1">
-		<link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css?v=5">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -25,9 +25,10 @@
     <nav class="mobile-nav">
         <a href="index.html#hero" class="mobile-nav-item">首页</a>
         <a href="about-enterprise.html" class="mobile-nav-item">走进企业</a>
-        <a href="article-list.html" class="mobile-nav-item active">新闻中心</a>
-        <a href="index.html#media" class="mobile-nav-item">媒体聚焦</a>
-        <a href="index.html#business" class="mobile-nav-item">主营业务</a>
+        <a href="#" class="mobile-nav-item">媒体聚焦</a>
+        <a href="article-list.html" class="mobile-nav-item">新闻中心</a>
+        <a href="index.html#business" class="mobile-nav-item active">主营业务</a>
+        <a href="index.html#products" class="mobile-nav-item">产品展示</a>
         <a href="index.html#contact" class="mobile-nav-item">联系方式</a>
     </nav>
     
@@ -46,17 +47,21 @@
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">走进企业</span>
             </a>
-            <a href="article-list.html" class="nav-item sub-nav-item active" data-section="news">
+            <a href="article-list.html" class="nav-item sub-nav-item" data-section="news">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">新闻中心</span>
             </a>
-            <a href="index.html#media" class="nav-item sub-nav-item" data-section="media">
+            <a href="article-media.html" class="nav-item sub-nav-item" data-section="media">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">媒体聚焦</span>
             </a>
-            <a href="index.html#business" class="nav-item sub-nav-item" data-section="business">
+            <a href="article-business.html" class="nav-item sub-nav-item active" data-section="business">
                 <span class="nav-dot sub-nav-dot"></span>
                 <span class="nav-text sub-nav-text">主营业务</span>
+            </a>
+            <a href="index.html#products" class="nav-item sub-nav-item" data-section="products">
+                <span class="nav-dot sub-nav-dot"></span>
+                <span class="nav-text sub-nav-text">产品展示</span>
             </a>
             <a href="index.html#contact" class="nav-item sub-nav-item" data-section="contact">
                 <span class="nav-dot sub-nav-dot"></span>
@@ -107,7 +112,7 @@
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-arrow">
                                 <path d="M6 2L10 8L6 14" stroke="#101215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span class="breadcrumb-item active">新闻列表</span>
+                            <span class="breadcrumb-item active">主营业务</span>
                         </nav>
                     </div>
                     <div class="nav-tabs">
@@ -119,54 +124,21 @@
             </div>
         </section>
 
-        <!-- 新闻列表区域 -->
+        <!-- 文章列表区域 -->
         <section class="article-section">
             <div class="section-inner">
-                <!-- 焦点轮播 -->
-                <div class="article-focus">
-                    <div class="focus-slider">
-                        <div class="focus-slide active">
-                            <img src="public/images/article-focus-1.webp" alt="焦点图">
-                            <div class="focus-overlay"></div>
-                            <div class="focus-info">
-                                <div class="date-display theme-light">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
-                                </div>
-                                <h3 class="focus-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
-                            </div>
-                            <button class="focus-nav focus-prev" aria-label="上一张">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
-                                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <button class="focus-nav focus-next" aria-label="下一张">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
-                                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="focus-indicators">
-                        <span class="focus-indicator active"></span>
-                        <span class="focus-indicator"></span>
-                        <span class="focus-indicator"></span>
-                    </div>
-                </div>
-
                 <!-- 文章列表 -->
                 <div class="news-article-list">
-                    <a href="article-detail.html?id=agri-1&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-13&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-1.webp" alt="新闻图片">
+                            <img src="public/images/business-bg-1.webp" alt="制糖产业">
                         </div>
                         <div class="news-body">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 6</span>
                                 </div>
-                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                                <h3 class="news-title">制糖产业：日处理甘蔗8.2万吨的行业标杆</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -176,17 +148,16 @@
                             </span>
                         </div>
                     </a>
-                    <a href="article-detail.html?id=agri-2&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-14&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-2.webp" alt="新闻图片">
+                            <img src="public/images/business-bg-2.webp" alt="纸业板块">
                         </div>
                         <div class="news-body news-body-variant">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 6</span>
                                 </div>
-                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
+                                <h3 class="news-title">纸业板块：蔗渣再生环保纸的绿色循环</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -196,17 +167,16 @@
                             </span>
                         </div>
                     </a>
-                    <a href="article-detail.html?id=agri-3&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-15&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-3.webp" alt="新闻图片">
+                            <img src="public/images/business-bg-3.webp" alt="酒业板块">
                         </div>
                         <div class="news-body news-body-variant">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 6</span>
                                 </div>
-                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                                <h3 class="news-title">酒业板块：甘蔗朗姆酒的国际化之路</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -216,17 +186,16 @@
                             </span>
                         </div>
                     </a>
-                     <a href="article-detail.html?id=agri-4&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-16&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-1.webp" alt="新闻图片">
+                            <img src="public/images/business-bg-4.webp" alt="肥业板块">
                         </div>
                         <div class="news-body">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 6</span>
                                 </div>
-                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                                <h3 class="news-title">肥业板块：滤泥转化有机生态肥</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -236,17 +205,16 @@
                             </span>
                         </div>
                     </a>
-                    <a href="article-detail.html?id=agri-5&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-17&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-2.webp" alt="新闻图片">
+                            <img src="public/images/news-1.webp" alt="供应链管理">
                         </div>
                         <div class="news-body news-body-variant">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 5</span>
                                 </div>
-                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
+                                <h3 class="news-title">供应链管理：覆盖广西10市25县的产业网络</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -256,17 +224,16 @@
                             </span>
                         </div>
                     </a>
-                    <a href="article-detail.html?id=agri-6&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-17&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-3.webp" alt="新闻图片">
+                            <img src="public/images/news-2.webp" alt="商贸物流">
                         </div>
                         <div class="news-body news-body-variant">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 5</span>
                                 </div>
-                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                                <h3 class="news-title">商贸物流：全链条冷链物流体系</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -276,17 +243,16 @@
                             </span>
                         </div>
                     </a>
-                     <a href="article-detail.html?id=agri-4&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-17&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-1.webp" alt="新闻图片">
+                            <img src="public/images/news-3.webp" alt="科技创新平台">
                         </div>
                         <div class="news-body">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 5</span>
                                 </div>
-                                <h3 class="news-title">广糖集团党委开展树立和践行正确政绩观学习教育读书班暨党委理论学习中心组2026年第2次专题学习集中研讨</h3>
+                                <h3 class="news-title">科技创新平台：博士后科研工作站</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>
@@ -296,37 +262,16 @@
                             </span>
                         </div>
                     </a>
-                    <a href="article-detail.html?id=agri-5&theme=green" class="news-card">
+                    <a href="article-detail.html?id=agri-18&theme=green" class="news-card">
                         <div class="news-image">
-                            <img src="public/images/news-2.webp" alt="新闻图片">
+                            <img src="public/images/product-3.webp" alt="质量管控">
                         </div>
                         <div class="news-body news-body-variant">
                             <div class="news-meta">
                                 <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
+                                    <span>2026/ 4</span>
                                 </div>
-                                <h3 class="news-title">根植蔗乡守初心 党业融合节节高 | 广糖集团下属公司联合开展迎新春营销暨主题党日活动</h3>
-                            </div>
-                            <span class="news-more">
-                                <span>了解更多</span>
-                                <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
-                    <a href="article-detail.html?id=agri-6&theme=green" class="news-card">
-                        <div class="news-image">
-                            <img src="public/images/news-3.webp" alt="新闻图片">
-                        </div>
-                        <div class="news-body news-body-variant">
-                            <div class="news-meta">
-                                <div class="date-display">
-                                    <span>2025/ 3</span>
-                                    <span>03</span>
-                                </div>
-                                <h3 class="news-title">国企担当植新绿 蔗区振兴践初心 | 广糖集团扎实开展2026年植树节主题活动</h3>
+                                <h3 class="news-title">质量管控：FSSC认证的标准化体系</h3>
                             </div>
                             <span class="news-more">
                                 <span>了解更多</span>

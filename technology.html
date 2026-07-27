@@ -25,9 +25,9 @@
     <nav class="mobile-nav">
         <a href="#hero" class="mobile-nav-item" data-section="hero">首页</a>
         <a href="#about" class="mobile-nav-item" data-section="about">走进企业</a>
+        <a href="#media" class="mobile-nav-item" data-section="media">媒体聚焦</a>
         <a href="#business" class="mobile-nav-item" data-section="business">主营业务</a>
-        <a href="#news" class="mobile-nav-item" data-section="news">新闻动态</a>
-        <a href="#media" class="mobile-nav-item" data-section="media">信息公开</a>
+        <a href="#achievement" class="mobile-nav-item" data-section="achievement">成果展示</a>
         <a href="#video" class="mobile-nav-item" data-section="video">企业视频</a>
         <a href="#contact" class="mobile-nav-item" data-section="contact">联系方式</a>
     </nav>
@@ -112,7 +112,6 @@
                     <div class="hero-content">
                         <h1 class="hero-title">创造持久价值</h1>
                         <p class="hero-subtitle">用我们一流的产品和服务，发现并为您提供创造持久价值的机会</p>
-                        <a href="#contact" class="hero-btn">联系我们</a>
                     </div>
                 </div>
                 <div class="hero-slide">
@@ -147,7 +146,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">走进企业</h2>
                     </div>
-                    <a href="about-enterprise.html?theme=blue" class="more-link">
+                    <a href="about-enterprise-blue.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -205,7 +204,11 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">媒体聚焦</h2>
                     </div>
-                    <a href="article-list-blue.html" class="more-link">
+                    <a href="search.html?theme=blue" class="search-bar">
+                        <img src="public/images/icons/search-icon.svg" alt="" class="search-icon">
+                        <span class="search-text">搜索</span>
+                    </a>
+                    <a href="article-tech-media.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -281,7 +284,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">主营业务</h2>
                     </div>
-                    <a href="article-list-blue.html" class="more-link">
+                    <a href="article-tech-business.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -364,7 +367,7 @@
                         <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">成果展示</h2>
                     </div>
-                    <a href="article-list-blue.html" class="more-link">
+                    <a href="article-tech-achievement.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -456,31 +459,7 @@
                     <div class="video-player-wrap">
                         <div class="video-player-frame">
                             <div class="video-player-area">
-                                <img src="public/images/video-cover.webp" alt="视频封面" class="video-poster">
-                                <div class="video-poster-overlay"></div>
-                                
-                                <button class="video-play-btn" aria-label="播放">
-                                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="video-play-icon">
-                                        <path d="M16 8L48 32L16 56V8Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-
-                                <div class="video-info-bar">
-                                    <div class="video-progress-wrap">
-                                        <span class="video-time">00:25</span>
-                                        <div class="video-slider-wrap">
-                                            <div class="video-slider-bg-left"></div>
-                                            <div class="video-slider-thumb"></div>
-                                            <div class="video-slider-bg-right"></div>
-                                        </div>
-                                        <span class="video-time">01:25</span>
-                                    </div>
-                                    <button class="video-fullscreen-btn" aria-label="全屏">
-                                        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4H12V8H8V12H4V4ZM4 20H8V24H12V28H4V20ZM20 4H24V8H28V12H24V8H20V4ZM20 20H24V28H28V24H24V20H20Z" fill="#FFFFFF"/>
-                                        </svg>
-                                    </button>
-                                </div>
+                                <video class="video-element" src="public/Videos/Video1.mp4" controls preload="metadata" playsinline></video>
                             </div>
                         </div>
                     </div>

@@ -247,12 +247,14 @@
         <div class="brand-gold"></div>
     </div>
 
+    <script src="js/article-data.js"></script>
     <script>
         (function(){
             var params = new URLSearchParams(window.location.search);
             var themeMap = { 'green': 'theme-green', 'blue': 'theme-blue', 'gold': 'theme-gold' };
             var homeUrlMap = { 'green': 'index.html', 'blue': 'technology.html', 'gold': 'finance.html' };
             var articleListMap = { 'green': 'article-list.html', 'blue': 'article-list-blue.html', 'gold': 'article-list-gold.html' };
+            var aboutUrlMap = { 'green': 'about-enterprise.html', 'blue': 'about-enterprise-blue.html', 'gold': 'about-enterprise-gold.html' };
             var themeKey = params.get('theme') || 'green';
             var theme = themeMap[themeKey] || 'theme-green';
             var homeUrl = homeUrlMap[themeKey] || 'index.html';
@@ -263,7 +265,7 @@
                 if (section === 'hero') {
                     link.href = homeUrl + '#hero';
                 } else if (section === 'about') {
-                    link.href = 'about-enterprise.html?theme=' + themeKey;
+                    link.href = aboutUrlMap[themeKey] || 'about-enterprise.html';
                 } else if (section === 'news') {
                     link.href = articleListMap[themeKey] || 'article-list.html';
                 } else if (section === 'media') {
@@ -277,6 +279,59 @@
             var homeLink = document.getElementById('breadcrumb-home-link');
             if (homeLink) {
                 homeLink.href = homeUrl;
+            }
+            var newsLink = document.getElementById('breadcrumb-news-link');
+            if (newsLink) {
+                newsLink.href = articleListMap[themeKey] || 'article-list.html';
+            }
+            
+            // ==========================================
+            // 动态文章内容渲染（支持所有板块）
+            // ==========================================
+            var articleId = params.get('id');
+            var articleData = window.AGRICULTURE_ARTICLES || {};
+            if (themeKey === 'blue') {
+                articleData = window.TECHNOLOGY_ARTICLES || articleData;
+            } else if (themeKey === 'gold') {
+                articleData = window.FINANCE_ARTICLES || articleData;
+            }
+            var article = articleId ? articleData[articleId] : null;
+            if (article) {
+                var titleEl = document.querySelector('.article-title');
+                if (titleEl) titleEl.textContent = article.title;
+                
+                var metaTexts = document.querySelectorAll('.meta-text');
+                if (metaTexts[0]) metaTexts[0].textContent = article.date;
+                if (metaTexts[1]) metaTexts[1].textContent = article.views;
+                
+                var breadcrumbActive = document.querySelector('.breadcrumb-item.active');
+                if (breadcrumbActive) breadcrumbActive.textContent = article.category || '企业新闻';
+                
+                var breadcrumbNewsLink = document.getElementById('breadcrumb-news-link');
+                if (breadcrumbNewsLink && article.categoryLink) {
+                    breadcrumbNewsLink.href = article.categoryLink;
+                    breadcrumbNewsLink.textContent = article.category || '新闻中心';
+                }
+                
+                var articleContent = document.querySelector('.article-content');
+                if (articleContent && article.paragraphs) {
+                    articleContent.innerHTML = '';
+                    article.paragraphs.forEach(function(text, idx) {
+                        if (idx === 1 && article.image) {
+                            var imgDiv = document.createElement('div');
+                            imgDiv.className = 'article-image';
+                            var img = document.createElement('img');
+                            img.src = article.image;
+                            img.alt = article.title;
+                            imgDiv.appendChild(img);
+                            articleContent.appendChild(imgDiv);
+                        }
+                        var p = document.createElement('p');
+                        p.className = 'article-paragraph';
+                        p.textContent = text;
+                        articleContent.appendChild(p);
+                    });
+                }
             }
         })();
     </script>
