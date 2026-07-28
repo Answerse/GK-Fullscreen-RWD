@@ -16,30 +16,6 @@
         .media-section .section-title {
             color: var(--color-bg-white);
         }
-        .media-section .more-link {
-            /* background: rgba(255, 255, 255, 0.2); */
-        }
-        .media-section .more-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        /* 媒体聚焦指示器反白 */
-        .media-section .media-indicators {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .media-section .media-indicator {
-            width: 16px;
-            height: 16px;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-        .media-section .media-indicator.active {
-            background: #FFFFFF;
-        }
     </style>
 </head>
 <body data-page-theme="green">
@@ -328,7 +304,7 @@
                         <img src="public/images/icons/search-icon.svg" alt="" class="search-icon">
                         <span class="search-text">搜索</span>
                     </a>
-                    <a href="article-media.html" class="more-link light">
+                    <a href="article-media.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
                             <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
@@ -392,7 +368,6 @@
                             </div>
                         </a>
                     </div>
-                </div>
                     <div class="media-indicators">
                         <span class="media-indicator active"></span>
                         <span class="media-indicator"></span>

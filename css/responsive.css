@@ -468,11 +468,11 @@
     }
 
     .finance-business-nav-prev {
-        left: -24px !important;
+        left: 0 !important;
     }
 
     .finance-business-nav-next {
-        right: -24px !important;
+        right: 0 !important;
     }
 
     .tech-achievement-list {
@@ -884,11 +884,11 @@
     }
 
     .finance-business-nav-prev {
-        left: -20px !important;
+        left: 0 !important;
     }
 
     .finance-business-nav-next {
-        right: -20px !important;
+        right: 0 !important;
     }
 
     .tech-achievement-list {

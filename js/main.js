@@ -1005,15 +1005,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.totalPages !== prevTotalPages && this.indicatorsContainer) {
                 this.createIndicators();
             }
-            // 桌面端固定卡片宽度 360px，响应式动态计算
-            const fixedCardWidth = 360;
+            // 弹性卡片宽度：按可用空间均分
             const slider = this.track.parentElement;
             const sliderWidth = slider.clientWidth;
             const gap = 40;
-            const minSpace = fixedCardWidth * this.cardsPerPage + gap * (this.cardsPerPage - 1);
-            const cardWidth = (this.cardsPerPage >= 4 && sliderWidth >= minSpace)
-                ? fixedCardWidth
-                : (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
                 card.style.width = cardWidth + 'px';
                 card.style.flex = 'none';
@@ -1158,15 +1154,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.totalPages !== prevTotalPages && this.indicatorsContainer) {
                 this.createIndicators();
             }
-            // 桌面端固定卡片宽度 330px，响应式动态计算
-            const fixedCardWidth = 330;
+            // 弹性卡片宽度：按可用空间均分
             const slider = this.track.parentElement;
             const sliderWidth = slider.clientWidth;
             const gap = 40;
-            const minSpace = fixedCardWidth * this.cardsPerPage + gap * (this.cardsPerPage - 1);
-            const cardWidth = (this.cardsPerPage >= 4 && sliderWidth >= minSpace)
-                ? fixedCardWidth
-                : (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
                 card.style.width = cardWidth + 'px';
                 card.style.flex = 'none';
