@@ -32,11 +32,41 @@
   - ≤768px 大手机
   - ≤375px 小手机
 
-## 5. 文件结构 & 样式分离
-- HTML / CSS 严格分离
+## 5. 文件结构 & 样式分离（强制执行）
+- HTML / CSS / JS 严格分离
 - 动效样式独立为 *.animation.css
 - SVG 样式独立管理
-- HTML 中禁止出现 style 属性 / 内联 <style> / @keyframes / transition
+- **HTML 中绝对禁止出现：**
+  - `style` 属性（行内样式）
+  - `<style>` 标签（内联样式块）
+  - `@keyframes` / `transition` 声明
+  - 任何 `background-image: url(...)`、`background:` 等视觉属性
+  - 任何 `width="xxx"`、`height="xxx"` 硬编码尺寸
+  - **内联 SVG（`<svg>...</svg>` 直接写在 HTML 中）**
+  - 所有视觉表现必须通过 CSS class 控制
+- **JS 中禁止直接操作 .style.\* 设置样式值**
+  - 正确做法：通过 `classList.add/remove/toggle` 切换 CSS class
+  - 唯一例外：CSS 自定义属性 `element.style.setProperty('--var', value)` 用于运行时动态值（如轮播进度条时间、卡片宽度）
+  - 动态动画数值（如数字滚动）也优先用 CSS 变量
+
+## 10. SVG 资源管理（强制执行）
+- **严禁内联 SVG**：HTML 中禁止直接写 `<svg>...</svg>`，所有 SVG 必须外部引用
+- **外部引用方式**：
+  - 优先使用 `<img src="path/to/icon.svg" alt="">`
+  - 或使用 `<svg><use href="path/to/sprite.svg#icon-id"/></svg>`
+- **图标复用原则**：
+  - 新增图标前，必须先检索本地 `/public/images/icons/` 目录
+  - 若本地已有相同或相似图标，必须复用现有资源，禁止重复添加
+  - 相同图标的判定标准：视觉效果一致、语义相同
+- **SVG 文件规范**：
+  - 文件名使用 kebab-case 命名法（如 `icon-arrow-right.svg`）
+  - SVG 内部 `id` 属性必须与文件名保持一致（如 `icon-arrow-right`）
+  - 禁止在 SVG 内嵌 `<style>` 标签或 `style` 属性
+  - 需要动态变色的 SVG，使用 `stroke="currentColor"` 或 `fill="currentColor"`，通过 CSS `color` 属性控制
+- **资源检查流程**：
+  1. 需要使用图标时，先在 `/public/images/icons/` 中搜索
+  2. 未找到匹配图标时，再添加新的 SVG 文件
+  3. 添加后立即更新所有引用，确保无重复资源
 
 ## 6. Figma Variables
 - 颜色 / spacing / 字号 / 行高 / 字重 / 圆角 / 阴影必须来自 Figma Variables

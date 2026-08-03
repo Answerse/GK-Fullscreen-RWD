@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="preconnect" href="https://fonts.loli.net" crossorigin>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>广西糖业集团 - 金融板块</title>
-    <link rel="stylesheet" href="css/style.css?v=41">
-    <link rel="stylesheet" href="css/svg-icons.css?v=1">
+    <link rel="stylesheet" href="css/style.css?v=46">
+    <link rel="stylesheet" href="css/svg-icons.css?v=2">
 		<link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css?v=6">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
         <span class="mobile-menu-bar"></span>
         <span class="mobile-menu-bar"></span>
     </button>
-    
+
     <!-- 移动端全屏导航菜单 -->
     <nav class="mobile-nav">
         <a href="#hero" class="mobile-nav-item" data-section="hero">首页</a>
@@ -31,12 +33,39 @@
         <a href="#video" class="mobile-nav-item" data-section="video">企业视频</a>
         <a href="#contact" class="mobile-nav-item" data-section="contact">联系方式</a>
     </nav>
-    
+
     <!-- 侧边导航栏 -->
+
+    <!-- 顶栏导航 - 布局切换时替代侧栏 (Figma 页头组件) -->
+    <div class="top-nav">
+        <div class="top-nav-brand">
+            <div class="top-nav-brand-red"></div>
+            <div class="top-nav-brand-gold"></div>
+        </div>
+        <div class="top-nav-bar">
+            <a href="finance.html" class="top-nav-logo">
+                <img loading="lazy" src="public/images/top-nav-logo-icon.svg" alt="国控Logo" class="top-nav-logo-icon">
+                <img loading="lazy" src="public/images/top-nav-logo-text.svg" alt="国控" class="top-nav-logo-text">
+            </a>
+            <div class="top-nav-links">
+                <a href="#hero" class="top-nav-item active" data-section="hero">首页</a>
+                <a href="#about" class="top-nav-item" data-section="about">企业简介</a>
+                <a href="#business" class="top-nav-item" data-section="business">主营业务</a>
+                <a href="#news" class="top-nav-item" data-section="news">新闻动态</a>
+                <a href="#media" class="top-nav-item" data-section="media">信息公开</a>
+                <a href="#video" class="top-nav-item" data-section="video">企业视频</a>
+                <a href="#contact" class="top-nav-item" data-section="contact">联系方式</a>
+            </div>
+            <a href="search.html?theme=gold" class="top-nav-search">
+                <svg class="top-nav-search-icon"><use href="public/images/icons/icon-search-top-nav.svg#icon-search-top-nav"/></svg>
+                <span class="top-nav-search-text">搜索</span>
+            </a>
+        </div>
+    </div>
     <aside class="sidebar sidebar-home">
         <div class="sidebar-logo">
-            <img src="public/images/icons/sidebar-logo.svg" alt="国控Logo" class="logo-img logo-full">
-            <img src="public/images/logo-mini.svg" alt="国控Logo" class="logo-img logo-mini" width="80" height="140">
+            <img loading="lazy" src="public/images/icons/sidebar-logo.svg" alt="国控Logo" class="logo-img logo-full">
+            <img loading="lazy" src="public/images/logo-mini.svg" alt="国控Logo" class="logo-img logo-mini" width="80" height="140">
         </div>
         <nav class="sidebar-nav home-nav">
             <a href="#hero" class="nav-item home-nav-item active" data-section="hero">
@@ -72,24 +101,52 @@
 
     <!-- 搜索按钮 -->
     <button class="search-btn" aria-label="搜索">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3846 0C5.54479 0 0 5.54479 0 12.3846C0 19.2245 5.54479 24.7693 12.3846 24.7693C15.4168 24.7693 18.1945 23.6796 20.3474 21.8704L26.1616 27.6846C26.5821 28.1051 27.264 28.1051 27.6846 27.6846C28.1051 27.264 28.1051 26.5821 27.6846 26.1616L21.8704 20.3474C23.6796 18.1945 24.7693 15.4168 24.7693 12.3846C24.7693 5.54479 19.2245 0 12.3846 0ZM2.15385 12.3846C2.15385 6.73433 6.73433 2.15385 12.3846 2.15385C18.0349 2.15385 22.6154 6.73433 22.6154 12.3846C22.6154 18.0349 18.0349 22.6154 12.3846 22.6154C6.73433 22.6154 2.15385 18.0349 2.15385 12.3846Z"/>
-        </svg>
+        <svg class="svg-icon svg-icon-md svg-icon-white"><use href="public/images/icons/icon-arrow-next-white-28.svg#icon-arrow-next-white-28"/></svg>
     </button>
 
     <!-- 页面切换按钮 -->
     <div class="page-switch-wrapper" data-current-page="finance">
         <button class="page-switch-btn" aria-label="切换页面">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-sm svg-icon-white">
-                <circle cx="12" cy="6" r="2"/>
-                <circle cx="12" cy="12" r="2"/>
-                <circle cx="12" cy="18" r="2"/>
-            </svg>
+            <svg class="svg-icon svg-icon-sm svg-icon-white"><use href="public/images/icons/icon-menu-dots.svg#icon-menu-dots"/></svg>
         </button>
         <div class="page-switch-panel">
             <a href="agriculture.html" class="page-switch-item" data-target="agriculture">农业</a>
             <a href="technology.html" class="page-switch-item" data-target="technology">科技</a>
             <a href="finance.html" class="page-switch-item active" data-target="finance">金融</a>
+        </div>
+    </div>
+
+    <!-- 设置触发器按钮 -->
+    <button class="settings-trigger" aria-label="设置">
+        <svg class="svg-icon svg-icon-sm svg-icon-white"><use href="public/images/icons/icon-menu-dots.svg#icon-menu-dots"/></svg>
+    </button>
+
+    <!-- 设置面板 (Figma 模版切换-展开) -->
+    <div class="settings-panel">
+        <button class="settings-close-btn" aria-label="关闭">
+            <img loading="lazy" src="public/images/settings-close.svg" alt="关闭">
+        </button>
+        <div class="settings-header">
+            <h3 class="settings-title">样式设置</h3>
+        </div>
+
+        <div class="settings-section">
+            <span class="settings-section-label">导航栏位置</span>
+            <div class="settings-options">
+                <button class="settings-option" data-layout="topnav">顶部</button>
+                <button class="settings-option active" data-layout="sidebar">左侧</button>
+            </div>
+        </div>
+
+        <div class="settings-divider"></div>
+
+        <div class="settings-section">
+            <span class="settings-section-label">主题</span>
+            <div class="settings-options">
+                <button class="settings-option" data-theme="agriculture">农业</button>
+                <button class="settings-option" data-theme="technology">科技</button>
+                <button class="settings-option active" data-theme="finance">金融</button>
+            </div>
         </div>
     </div>
 
@@ -99,14 +156,14 @@
         <section id="hero" class="section hero-section finance-hero">
             <div class="hero-slider">
                 <div class="hero-slide active">
-                    <div class="hero-slide-bg" style="background-image: url('public/images/finance-hero-1.webp');"></div>
+                    <div class="hero-slide-bg hero-bg-fin-1"></div>
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
-                        <h1 class="hero-title">聚资强国 创利惠民</h1>
+                        <h1 class="hero-title">广西国控资本投资管理集团有限公司</h1>
                     </div>
                 </div>
                 <div class="hero-slide">
-                    <div class="hero-slide-bg" style="background-image: url('public/images/finance-hero-2.webp');"></div>
+                    <div class="hero-slide-bg hero-bg-fin-2"></div>
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
                         <h1 class="hero-title">资本赋能 聚力深耕</h1>
@@ -128,19 +185,19 @@
         <!-- 企业简介 -->
         <section id="about" class="section finance-about-section">
             <div class="finance-about-bg">
-                <img src="public/images/news-bg.webp" alt="背景">
+                <img loading="lazy" src="public/images/news-bg.webp" alt="背景">
                 <div class="finance-about-mask"></div>
             </div>
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">企业简介</h2>
                     </div>
                     <a href="about-enterprise-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
-                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                         </span>
                     </a>
                 </div>
@@ -190,81 +247,81 @@
         <!-- 主营业务 -->
         <section id="business" class="section finance-business-section">
             <div class="finance-business-bg">
-                <img src="public/images/finance-business-bg.webp" alt="">
+                <img loading="lazy" src="public/images/finance-business-bg.webp" alt="">
                 <div class="finance-business-bg-mask"></div>
             </div>
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">主营业务</h2>
                     </div>
                     <a href="article-list-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
-                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                         </span>
                     </a>
                 </div>
                 <div class="section-content-wrap">
                     <div class="finance-business-carousel">
                     <button class="finance-business-nav finance-business-nav-prev" aria-label="上一张">
-                        <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                     </button>
                     <div class="finance-business-slider">
                         <div class="finance-business-track">
                             <div class="finance-business-card" data-index="0">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-equity.svg" alt="股权投资" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-equity.svg" alt="股权投资" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">股权投资</h3>
                                 <p class="finance-business-desc">发起基金，深耕农垦产业链，以投促产，实现国资保值增值。</p>
                             </div>
                             <div class="finance-business-card finance-business-card-gold" data-index="1">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-insurance.svg" alt="商业保险" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-insurance.svg" alt="商业保险" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">商业保险</h3>
                                 <p class="finance-business-desc">参股保险机构，协同政策农险，为垦区全产业链筑牢风险屏障。</p>
                             </div>
                             <div class="finance-business-card finance-business-card-red" data-index="2">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-guarantee.svg" alt="融资担保" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-guarantee.svg" alt="融资担保" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">融资担保</h3>
                                 <p class="finance-business-desc">专注产业链小微，提供增信服务，破解融资难题，强化链企粘性。</p>
                             </div>
                             <div class="finance-business-card" data-index="3">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-proxy.svg" alt="保险代理" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-proxy.svg" alt="保险代理" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">保险代理</h3>
                                 <p class="finance-business-desc">持牌机构，代理销售理赔，主推政策性农险，普惠垦区民生。</p>
                             </div>
                             <div class="finance-business-card" data-index="4">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-supply-chain.svg" alt="供应链金融" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-supply-chain.svg" alt="供应链金融" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">供应链金融</h3>
                                 <p class="finance-business-desc">聚焦产业链上下游，为核心企业及中小供应商提供应收账款融资、订单融资等服务，提升资金周转效率，强化链上协同。</p>
                             </div>
                             <div class="finance-business-card finance-business-card-gold" data-index="5">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-securitization.svg" alt="资产证券化" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-securitization.svg" alt="资产证券化" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">资产证券化</h3>
                                 <p class="finance-business-desc">将优质应收账款、租赁债权等资产打包证券化，拓宽融资渠道，降低融资成本，实现资产流动性管理。</p>
                             </div>
                             <div class="finance-business-card finance-business-card-red" data-index="6">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-industry-fund.svg" alt="产业基金" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-industry-fund.svg" alt="产业基金" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">产业基金</h3>
                                 <p class="finance-business-desc">联合政府、产业龙头设立专项产业基金，投向重点产业链环节，推动技术升级与产能优化，实现产融深度结合。</p>
                             </div>
                             <div class="finance-business-card" data-index="7">
                                 <div class="finance-business-icon-wrap">
-                                    <img src="public/images/icon-fintech.svg" alt="金融科技服务" class="finance-business-icon">
+                                    <img loading="lazy" src="public/images/icon-fintech.svg" alt="金融科技服务" class="finance-business-icon">
                                 </div>
                                 <h3 class="finance-business-name">金融科技服务</h3>
                                 <p class="finance-business-desc">运用大数据、区块链、AI等技术，为产业链企业提供智能风控、供应链溯源、数字账户等科技赋能服务，提升金融服务效率与安全性。</p>
@@ -272,7 +329,7 @@
                         </div>
                     </div>
                     <button class="finance-business-nav finance-business-nav-next" aria-label="下一张">
-                        <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                        <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                     </button>
                 </div>
                 </div>
@@ -288,13 +345,13 @@
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">新闻动态</h2>
                     </div>
                     <a href="article-list-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
-                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                         </span>
                     </a>
                 </div>
@@ -302,7 +359,7 @@
                     <div class="finance-news-content">
                     <div class="finance-news-focus">
                         <div class="finance-news-focus-image">
-                            <img src="public/images/finance-news-focus.webp" alt="焦点图">
+                            <img loading="lazy" src="public/images/finance-news-focus.webp" alt="焦点图">
                             <div class="finance-news-focus-overlay"></div>
                             <div class="finance-news-focus-info">
                                 <h3 class="finance-news-focus-title">银企共建聚合力 民族团结志愿行|三家党组织联合开展主题共建活动</h3>
@@ -316,12 +373,12 @@
                             </div>
                             <div class="finance-news-focus-nav finance-news-focus-nav-prev">
                                 <svg viewBox="0 0 24 22" class="svg-icon svg-icon-lg svg-icon-white">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/>
                                 </svg>
                             </div>
                             <div class="finance-news-focus-nav finance-news-focus-nav-next">
                                 <svg viewBox="0 0 24 22" class="svg-icon svg-icon-lg svg-icon-white">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/>
                                 </svg>
                             </div>
                         </div>
@@ -365,21 +422,26 @@
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">信息公开</h2>
                     </div>
                     <a href="article-finance-info.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
-                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                         </span>
                     </a>
                 </div>
                 <div class="section-content-wrap">
-                    <div class="finance-info-list">
+                    <div class="finance-info-carousel">
+                        <button class="finance-info-nav finance-info-nav-prev" aria-label="上一张">
+                            <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
+                        </button>
+                        <div class="finance-info-slider">
+                            <div class="finance-info-track finance-info-list">
                     <a href="article-detail.html?theme=gold" class="finance-info-card">
                         <div class="finance-info-card-image">
-                            <img src="public/images/finance-info-1.webp" alt="图片">
+                            <img loading="lazy" src="public/images/finance-info-1.webp" alt="图片">
                         </div>
                         <div class="finance-info-card-content">
                             <div class="finance-info-card-info">
@@ -392,14 +454,14 @@
                             <span class="finance-info-card-more">
                                 <span>了解更多</span>
                                 <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/>
                                 </svg>
                             </span>
                         </div>
                     </a>
                     <a href="article-detail.html?theme=gold" class="finance-info-card">
                         <div class="finance-info-card-image">
-                            <img src="public/images/news-2.webp" alt="图片">
+                            <img loading="lazy" src="public/images/news-2.webp" alt="图片">
                         </div>
                         <div class="finance-info-card-content">
                             <div class="finance-info-card-info">
@@ -412,14 +474,14 @@
                             <span class="finance-info-card-more">
                                 <span>了解更多</span>
                                 <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/>
                                 </svg>
                             </span>
                         </div>
                     </a>
                     <a href="article-detail.html?theme=gold" class="finance-info-card">
                         <div class="finance-info-card-image">
-                            <img src="public/images/news-1.webp" alt="图片">
+                            <img loading="lazy" src="public/images/news-1.webp" alt="图片">
                         </div>
                         <div class="finance-info-card-content">
                             <div class="finance-info-card-info">
@@ -432,12 +494,18 @@
                             <span class="finance-info-card-more">
                                 <span>了解更多</span>
                                 <svg viewBox="0 0 24 22" class="svg-icon svg-icon-sm svg-icon-dark">
-                                    <use href="public/images/icons/arrow-forward-new.svg#arrow"/>
+                                    <use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/>
                                 </svg>
                             </span>
                         </div>
                     </a>
-                </div>
+                            </div>
+                        </div>
+                        <button class="finance-info-nav finance-info-nav-next" aria-label="下一张">
+                            <svg viewBox="0 0 24 22" class="nav-arrow-icon"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
+                        </button>
+                    </div>
+                    <div class="finance-info-indicators"></div>
                 </div>
             </div>
         </section>
@@ -449,13 +517,13 @@
             <div class="section-inner">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">企业视频</h2>
                     </div>
                     <a href="article-list-gold.html" class="more-link">
                         <span>查看更多</span>
                         <span class="arrow-circle">
-                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow"/></svg>
+                            <svg viewBox="0 0 24 22" class="arrow-inline-svg"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                         </span>
                     </a>
                 </div>
@@ -464,7 +532,7 @@
                     <div class="video-player-wrap">
                         <div class="video-player-frame">
                             <div class="video-player-area">
-                                <video class="video-element" src="public/Videos/Video1.mp4" controls preload="metadata" playsinline></video>
+                                <video poster="public/images/video-poster.webp" class="video-element" src="public/Videos/Video1.mp4" controls preload="metadata" playsinline></video>
                             </div>
                         </div>
                     </div>
@@ -476,11 +544,11 @@
         <!-- 联系方式 -->
         <section id="contact" class="section contact-section">
             <div class="contact-map-bg">
-                <img src="public/images/contact-map-figma.webp" alt="" class="contact-map-bg-img">
+                <img loading="lazy" src="public/images/contact-map-figma.webp" alt="" class="contact-map-bg-img">
                 <div class="contact-map-overlay"></div>
                 <div class="contact-map-pin">
                     <div class="contact-map-pin-icon">
-                        <img src="public/images/icon-address.svg" alt="" class="contact-map-pin-marker">
+                        <img loading="lazy" src="public/images/icon-address.svg" alt="" class="contact-map-pin-marker">
                     </div>
                     <div class="contact-map-pin-circle"></div>
                 </div>
@@ -488,14 +556,14 @@
             <div class="contact-content">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <img src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
+                        <img loading="lazy" src="public/images/icons/brand-title.svg" alt="" class="brand-icon">
                         <h2 class="section-title">联系方式</h2>
                     </div>
                 </div>
                 <div class="contact-cards-row">
                     <div class="contact-card-item">
                         <div class="contact-card-icon-wrap">
-                            <img src="public/images/icon-phone.svg" alt="电话" class="contact-card-icon">
+                            <img loading="lazy" src="public/images/icon-phone.svg" alt="电话" class="contact-card-icon">
                         </div>
                         <span class="contact-card-label">电话</span>
                         <span class="contact-card-value">0771-2213661 ｜2223939</span>
@@ -503,7 +571,7 @@
                     <div class="contact-card-divider"></div>
                     <div class="contact-card-item">
                         <div class="contact-card-icon-wrap">
-                            <img src="public/images/icon-email.svg" alt="邮箱" class="contact-card-icon">
+                            <img loading="lazy" src="public/images/icon-email.svg" alt="邮箱" class="contact-card-icon">
                         </div>
                         <span class="contact-card-label">邮箱</span>
                         <span class="contact-card-value">gxbgspzh@163.com</span>
@@ -511,7 +579,7 @@
                     <div class="contact-card-divider"></div>
                     <div class="contact-card-item">
                         <div class="contact-card-icon-wrap">
-                            <img src="public/images/icon-fax-1.svg" alt="传真" class="contact-card-icon">
+                            <img loading="lazy" src="public/images/icon-fax-1.svg" alt="传真" class="contact-card-icon">
                         </div>
                         <span class="contact-card-label">传真</span>
                         <span class="contact-card-value">0771-2213661 ｜2223939</span>
@@ -519,7 +587,7 @@
                     <div class="contact-card-divider"></div>
                     <div class="contact-card-item">
                         <div class="contact-card-icon-wrap">
-                            <img src="public/images/icon-postcode.svg" alt="邮编" class="contact-card-icon">
+                            <img loading="lazy" src="public/images/icon-postcode.svg" alt="邮编" class="contact-card-icon">
                         </div>
                         <span class="contact-card-label">邮编</span>
                         <span class="contact-card-value">530072</span>
@@ -527,7 +595,7 @@
                     <div class="contact-card-divider"></div>
                     <div class="contact-card-item">
                         <div class="contact-card-icon-wrap">
-                            <img src="public/images/icon-address.svg" alt="地址" class="contact-card-icon">
+                            <img loading="lazy" src="public/images/icon-address.svg" alt="地址" class="contact-card-icon">
                         </div>
                         <span class="contact-card-label">地址</span>
                         <span class="contact-card-value">南宁市青秀区七星路135号广西农垦大厦4楼</span>
@@ -548,7 +616,7 @@
                     </div>
                     <div class="contact-copyright">
                         <span class="contact-copyright-text">Copyright © 2026-2028 广西国控资本运营集团有限责任公司 版权所有</span>
-                        <span class="contact-icp-text">桂公网安备45010802000562号</span>
+                        <span class="contact-icp-text">工信部备案号：桂ICP备11005195号 桂公网安备：45010302000133号</span>
                     </div>
                 </div>
             </div>
@@ -561,6 +629,6 @@
         <div class="brand-gold"></div>
     </div>
 
-    <script src="js/main.js?v=17"></script>
+    <script defer src="js/main.js?v=17"></script>
 </body>
 </html>

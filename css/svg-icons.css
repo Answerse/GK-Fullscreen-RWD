@@ -31,23 +31,25 @@
    SVG 图标颜色
    ======================================== */
 .svg-icon-white {
-    fill: #ffffff;
+    fill: var(--color-text-inverse);
+    color: var(--color-text-inverse);
 }
 
 .svg-icon-dark {
-    fill: #101215;
+    fill: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 .svg-icon-red {
-    fill: #DA0001;
+    fill: var(--color-brand-red);
 }
 
 .svg-icon-gold {
-    fill: #C5A55A;
+    fill: var(--color-gold);
 }
 
 .svg-icon-gray {
-    fill: #6B7280;
+    fill: var(--color-text-secondary);
 }
 
 /* ========================================
@@ -114,4 +116,85 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+}
+
+/* ========================================
+   由内联 SVG 迁移为外部文件引用 — 配套类
+   （用于未带 class 的裸 <svg> 或 <use> 渲染时尺寸/颜色兜底）
+   ======================================== */
+
+/* 顶栏搜索图标 — 20x20, 深色（浅色顶栏上使用 currentColor） */
+.top-nav-search-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    color: var(--color-border-strong);
+    flex-shrink: 0;
+    display: block;
+}
+
+/* 三点菜单图标（深色版，用于设置按钮/面板头部） */
+.settings-menu-dots {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-text-inverse);
+    display: block;
+}
+
+/* 裸 svg-icon-sm svg-icon-white 版三点菜单 — 保证尺寸 */
+svg[class*="svg-icon-sm"] circle,
+svg[class*="svg-icon-sm"] path {
+    fill: inherit;
+    stroke: inherit;
+}
+
+/* 分页器右侧短 V 形箭头 (18x16) */
+.pagination-page-arrow {
+    width: 18px;
+    height: 16px;
+    display: block;
+    fill: var(--color-text-inverse);
+}
+
+/* 横向内联右箭头 (24x24, 深描边) — 用于文章内更多按钮 */
+.inline-arrow-right {
+    width: 24px;
+    height: 24px;
+    display: block;
+    color: var(--color-text-primary);
+    fill: none;
+}
+
+/* 30x30 关闭叉号 X — 深色描边 */
+.inline-close-x {
+    width: 30px;
+    height: 30px;
+    display: block;
+    fill: var(--color-text-primary);
+}
+
+/* 400x400 装饰水印 logo */
+.decor-watermark {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+/* 兜底：所有通过 <use> 引用的外部 SVG 继承父级 fill/stroke */
+svg use {
+    fill: inherit;
+    stroke: inherit;
+}
+
+/* Fallback 通用：当原 SVG 无 class 时的通用内联图标尺寸 */
+[class^="icon-0-0-"],
+[class*="fallback-inline"] {
+    width: 24px;
+    height: 24px;
+    display: block;
+    fill: currentColor;
+    flex-shrink: 0;
 }

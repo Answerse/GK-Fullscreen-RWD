@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="preconnect" href="https://fonts.loli.net" crossorigin>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>广西糖业集团 - 文章详情</title>
-    <link rel="stylesheet" href="css/style.css?v=33">
-    <link rel="stylesheet" href="css/svg-icons.css?v=1">
+    <link rel="stylesheet" href="css/style.css?v=39">
+    <link rel="stylesheet" href="css/svg-icons.css?v=2">
 		<link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css?v=5">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="page-article-list theme-green">
+
+    <!-- 顶栏导航 - 布局切换时替代侧栏 (Figma 页头组件) -->
+    <div class="top-nav">
+        <div class="top-nav-brand">
+            <div class="top-nav-brand-red"></div>
+            <div class="top-nav-brand-gold"></div>
+        </div>
+        <div class="top-nav-bar">
+            <a href="index.html" class="top-nav-logo">
+                <img loading="lazy" src="public/images/top-nav-logo-icon.svg" alt="国控Logo" class="top-nav-logo-icon">
+                <img loading="lazy" src="public/images/top-nav-logo-text.svg" alt="国控" class="top-nav-logo-text">
+            </a>
+            <div class="top-nav-links">
+                <a href="index.html#hero" class="top-nav-item" data-section="hero">首页</a>
+                <a href="index.html#about" class="top-nav-item" data-section="about">走进企业</a>
+                <a href="article-detail.html" class="top-nav-item active" data-section="news">新闻中心</a>
+                <a href="index.html#media" class="top-nav-item" data-section="media">媒体聚焦</a>
+                <a href="index.html#business" class="top-nav-item" data-section="business">主营业务</a>
+                <a href="index.html#contact" class="top-nav-item" data-section="contact">联系方式</a>
+            </div>
+            <a href="search.html?theme=green" class="top-nav-search">
+                <svg class="top-nav-search-icon"><use href="public/images/icons/icon-search-top-nav.svg#icon-search-top-nav"/></svg>
+                <span class="top-nav-search-text">搜索</span>
+            </a>
+        </div>
+    </div>
     <aside class="sidebar sidebar-sub">
         <div class="sidebar-logo">
-            <img src="public/images/logo-green.svg" alt="国控Logo" class="logo-img logo-full">
-            <img src="public/images/logo-green-mini.svg" alt="国控Logo" class="logo-img logo-mini">
+            <img loading="lazy" src="public/images/logo-green.svg" alt="国控Logo" class="logo-img logo-full">
+            <img loading="lazy" src="public/images/logo-green-mini.svg" alt="国控Logo" class="logo-img logo-mini">
         </div>
         <nav class="sidebar-nav sub-nav">
             <a href="index.html#hero" class="nav-item sub-nav-item" data-section="hero">
@@ -48,18 +76,12 @@
     </aside>
 
     <button class="search-btn" aria-label="搜索">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-md svg-icon-white">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3846 0C5.54479 0 0 5.54479 0 12.3846C0 19.2245 5.54479 24.7693 12.3846 24.7693C15.4168 24.7693 18.1945 23.6796 20.3474 21.8704L26.1616 27.6846C26.5821 28.1051 27.264 28.1051 27.6846 27.6846C28.1051 27.264 28.1051 26.5821 27.6846 26.1616L21.8704 20.3474C23.6796 18.1945 24.7693 15.4168 24.7693 12.3846C24.7693 5.54479 19.2245 0 12.3846 0ZM2.15385 12.3846C2.15385 6.73433 6.73433 2.15385 12.3846 2.15385C18.0349 2.15385 22.6154 6.73433 22.6154 12.3846C22.6154 18.0349 18.0349 22.6154 12.3846 22.6154C6.73433 22.6154 2.15385 18.0349 2.15385 12.3846Z"/>
-        </svg>
+        <svg class="svg-icon svg-icon-md svg-icon-white"><use href="public/images/icons/icon-arrow-next-white-28.svg#icon-arrow-next-white-28"/></svg>
     </button>
 
     <div class="page-switch-wrapper" data-current-page="agriculture">
         <button class="page-switch-btn" aria-label="切换页面">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-sm svg-icon-white">
-                <circle cx="12" cy="6" r="2"/>
-                <circle cx="12" cy="12" r="2"/>
-                <circle cx="12" cy="18" r="2"/>
-            </svg>
+            <svg class="svg-icon svg-icon-sm svg-icon-white"><use href="public/images/icons/icon-menu-dots.svg#icon-menu-dots"/></svg>
         </button>
         <div class="page-switch-panel">
             <a href="#" class="page-switch-item active" data-target="agriculture">农业</a>
@@ -68,27 +90,55 @@
         </div>
     </div>
 
+    <!-- 设置触发器按钮 -->
+    <button class="settings-trigger" aria-label="设置">
+        <svg class="svg-icon svg-icon-sm svg-icon-white"><use href="public/images/icons/icon-menu-dots.svg#icon-menu-dots"/></svg>
+    </button>
+
+    <!-- 设置面板 (Figma 模版切换-展开) -->
+    <div class="settings-panel">
+        <button class="settings-close-btn" aria-label="关闭">
+            <img loading="lazy" src="public/images/settings-close.svg" alt="关闭">
+        </button>
+        <div class="settings-header">
+            <h3 class="settings-title">样式设置</h3>
+        </div>
+
+        <div class="settings-section">
+            <span class="settings-section-label">导航栏位置</span>
+            <div class="settings-options">
+                <button class="settings-option" data-layout="topnav">顶部</button>
+                <button class="settings-option active" data-layout="sidebar">左侧</button>
+            </div>
+        </div>
+
+        <div class="settings-divider"></div>
+
+        <div class="settings-section">
+            <span class="settings-section-label">主题</span>
+            <div class="settings-options">
+                <button class="settings-option active" data-theme="agriculture">农业</button>
+                <button class="settings-option" data-theme="technology">科技</button>
+                <button class="settings-option" data-theme="finance">金融</button>
+            </div>
+        </div>
+    </div>
+
     <main class="article-main">
         <section class="article-banner">
             <div class="banner-bg">
-                <img src="public/images/banner-agriculture-bg.webp" alt="氛围图">
+                <img loading="lazy" src="public/images/banner-agriculture-bg.webp" alt="氛围图">
                 <div class="banner-gradient"></div>
             </div>
             <div class="banner-content">
                 <div class="banner-nav-row">
                     <div class="breadcrumb">
-                        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-home">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14ZM12.7936 2.69438C13.2792 2.16039 13.6883 2 14 2C14.3117 2 14.7208 2.16039 15.2064 2.69438C15.6922 3.22865 16.1756 4.05754 16.6022 5.16659C17.3708 7.16505 17.8918 9.90778 17.985 13H10.015C10.1082 9.90778 10.6292 7.16505 11.3978 5.16659C11.8244 4.05754 12.3078 3.22865 12.7936 2.69438ZM8.01416 13C8.10767 9.71022 8.65959 6.71462 9.53112 4.44863C9.79979 3.7501 10.105 3.10475 10.4468 2.53476C5.8598 3.95472 2.4493 8.05171 2.04107 13H8.01416ZM2.04107 15H8.01416C8.10767 18.2898 8.65959 21.2854 9.53112 23.5514C9.79979 24.2499 10.105 24.8952 10.4468 25.4652C5.8598 24.0453 2.4493 19.9483 2.04107 15ZM25.9589 13C25.5507 8.05172 22.1402 3.95472 17.5532 2.53476C17.895 3.10475 18.2002 3.7501 18.4689 4.44863C19.3404 6.71462 19.8923 9.71022 19.9858 13H25.9589ZM19.9858 15H25.9589C25.5507 19.9483 22.1402 24.0453 17.5532 25.4652C17.895 24.8952 18.2002 24.2499 18.4689 23.5514C19.3404 21.2854 19.8923 18.2898 19.9858 15ZM17.985 15C17.8918 18.0922 17.3708 20.8349 16.6022 22.8334C16.1756 23.9425 15.6922 24.7713 15.2064 25.3056C14.7208 25.8396 14.3117 26 14 26C13.6883 26 13.2792 25.8396 12.7936 25.3056C12.3078 24.7713 11.8244 23.9425 11.3978 22.8334C10.6292 20.8349 10.1082 18.0922 10.015 15H17.985Z" />
-                        </svg>
+                        <svg class="breadcrumb-home"><use href="public/images/icons/icon-breadcrumb-home.svg#icon-breadcrumb-home"/></svg>
                         <nav class="breadcrumb-nav">
                             <a href="index.html" id="breadcrumb-home-link" class="breadcrumb-item">首页</a>
-                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-arrow">
-                                <path d="M6 2L10 8L6 14" stroke="#101215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <svg class="breadcrumb-arrow"><use href="public/images/icons/icon-breadcrumb-arrow.svg#icon-breadcrumb-arrow"/></svg>
                             <a href="article-list.html" id="breadcrumb-news-link" class="breadcrumb-item">新闻中心</a>
-                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-arrow">
-                                <path d="M6 2L10 8L6 14" stroke="#101215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <svg class="breadcrumb-arrow"><use href="public/images/icons/icon-breadcrumb-arrow.svg#icon-breadcrumb-arrow"/></svg>
                             <span class="breadcrumb-item active">企业新闻</span>
                         </nav>
                     </div>
@@ -104,29 +154,29 @@
                         <div class="article-meta">
                             <div class="meta-item">
                                 <div class="meta-icon-wrap">
-                                    <img src="public/images/icon-time.svg" alt="时间" class="meta-icon">
+                                    <img loading="lazy" src="public/images/icon-time.svg" alt="时间" class="meta-icon">
                                 </div>
                                 <span class="meta-text">2026/05/27</span>
                             </div>
                             <div class="meta-item">
                                 <div class="meta-icon-wrap">
-                                    <img src="public/images/icon-view.svg" alt="浏览" class="meta-icon">
+                                    <img loading="lazy" src="public/images/icon-view.svg" alt="浏览" class="meta-icon">
                                 </div>
                                 <span class="meta-text">3233</span>
                             </div>
                             <div class="meta-share">
                                 <span class="share-label">分享至：</span>
                                 <button class="share-btn" aria-label="微信分享">
-                                    <img src="public/images/icon-wechat.svg" alt="微信" class="share-icon">
+                                    <img loading="lazy" src="public/images/icon-wechat.svg" alt="微信" class="share-icon">
                                 </button>
                                 <button class="share-btn" aria-label="微博分享">
-                                    <img src="public/images/icon-weibo.svg" alt="微博" class="share-icon">
+                                    <img loading="lazy" src="public/images/icon-weibo.svg" alt="微博" class="share-icon">
                                 </button>
                                 <button class="share-btn" aria-label="QQ分享">
-                                    <img src="public/images/icon-qq.svg" alt="QQ" class="share-icon">
+                                    <img loading="lazy" src="public/images/icon-qq.svg" alt="QQ" class="share-icon">
                                 </button>
                                 <button class="share-btn" aria-label="空间分享">
-                                    <img src="public/images/icon-qzone.svg" alt="空间" class="share-icon">
+                                    <img loading="lazy" src="public/images/icon-qzone.svg" alt="空间" class="share-icon">
                                 </button>
                             </div>
                         </div>
@@ -136,7 +186,7 @@
                         <p class="article-paragraph">为依法对实验动物生产和使用单位加强管理和监督，保障实验动物设施正常运行，确保实验动物和动物实验的质量，5月25日，广西壮族自治区科学技术厅、实验动物专家组一行莅临兽药厂，开展2025年度广西实验动物许可证年检现场核查工作。</p>
 
                         <div class="article-image">
-                            <img src="public/images/article-focus-1.webp" alt="文章配图">
+                            <img loading="lazy" src="public/images/article-focus-1.webp" alt="文章配图">
                         </div>
 
                         <p class="article-paragraph">专家组通过查看现场、文件材料核查、座谈交流等方式，根据检查条款对兽药厂实验动物中心的设备设施及环境监测、管理制度、人员资质、实验SOP及执行情况、实验动物福利、特种设备作业安全管理等关键环节进行了全面、细致的检查。</p>
@@ -149,7 +199,7 @@
                     <div class="article-footer-nav">
                         <div class="article-prev">
                             <div class="nav-arrow-wrap">
-                                <img src="public/images/icon-arrow-left.svg" alt="上一篇" class="nav-arrow">
+                                <img loading="lazy" src="public/images/icon-arrow-left.svg" alt="上一篇" class="nav-arrow">
                                 <span class="nav-label">上一篇</span>
                             </div>
                             <span class="nav-link">国控奋斗者 | 从跟跑到领跑！这支科研团队让兽药产品享誉市场</span>
@@ -157,7 +207,7 @@
                         <div class="article-next">
                             <div class="nav-arrow-wrap">
                                 <span class="nav-label">下一篇</span>
-                                <img src="public/images/icon-arrow-right.svg" alt="下一篇" class="nav-arrow">
+                                <svg class="nav-arrow" aria-label="下一篇"><use href="public/images/icons/arrow-forward-new.svg#arrow-forward-new"/></svg>
                             </div>
                             <span class="nav-link">没有了</span>
                         </div>
@@ -171,12 +221,12 @@
         <div class="footer-columns">
             <div class="footer-contact">
                 <div class="footer-logo">
-                    <img src="public/images/footer-logo.svg" alt="广西糖业集团">
+                    <img loading="lazy" src="public/images/footer-logo.svg" alt="广西糖业集团">
                 </div>
                 <div class="footer-contact-info">
                     <div class="footer-wechat">
                         <div class="footer-wechat-qr">
-                            <img src="public/images/qrcode-wechat.webp" alt="微信公众号">
+                            <img loading="lazy" src="public/images/qrcode-wechat.webp" alt="微信公众号">
                         </div>
                         <span class="footer-wechat-text">微信公众号</span>
                     </div>
@@ -238,7 +288,7 @@
         </div>
         <div class="footer-copyright">
             <span class="footer-copyright-text">Copyright © 2009-2026 广西糖业集团有限公司 版权所有</span>
-            <span class="footer-copyright-text">桂公网安备45010802000562号</span>
+            <span class="footer-copyright-text">工信部备案号：桂ICP备11005195号 桂公网安备：45010302000133号</span>
         </div>
     </footer>
 
@@ -247,7 +297,7 @@
         <div class="brand-gold"></div>
     </div>
 
-    <script src="js/article-data.js"></script>
+    <script defer src="js/article-data.js"></script>
     <script>
         (function(){
             var params = new URLSearchParams(window.location.search);
@@ -284,7 +334,7 @@
             if (newsLink) {
                 newsLink.href = articleListMap[themeKey] || 'article-list.html';
             }
-            
+
             // ==========================================
             // 动态文章内容渲染（支持所有板块）
             // ==========================================
@@ -299,20 +349,20 @@
             if (article) {
                 var titleEl = document.querySelector('.article-title');
                 if (titleEl) titleEl.textContent = article.title;
-                
+
                 var metaTexts = document.querySelectorAll('.meta-text');
                 if (metaTexts[0]) metaTexts[0].textContent = article.date;
                 if (metaTexts[1]) metaTexts[1].textContent = article.views;
-                
+
                 var breadcrumbActive = document.querySelector('.breadcrumb-item.active');
                 if (breadcrumbActive) breadcrumbActive.textContent = article.category || '企业新闻';
-                
+
                 var breadcrumbNewsLink = document.getElementById('breadcrumb-news-link');
                 if (breadcrumbNewsLink && article.categoryLink) {
                     breadcrumbNewsLink.href = article.categoryLink;
                     breadcrumbNewsLink.textContent = article.category || '新闻中心';
                 }
-                
+
                 var articleContent = document.querySelector('.article-content');
                 if (articleContent && article.paragraphs) {
                     articleContent.innerHTML = '';
@@ -335,6 +385,6 @@
             }
         })();
     </script>
-    <script src="js/main.js?v=17"></script>
+    <script defer src="js/main.js?v=17"></script>
 </body>
 </html>

@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g id="arrow" transform="matrix(1,0,0,1,0,1)">
-        <path d="M23.68,10.138C24.106,10.564 24.106,11.254 23.68,11.68L13.862,21.499C13.436,21.925 12.746,21.925 12.32,21.499C11.893,21.073 11.893,20.382 12.32,19.956L20.275,12L1.091,12C0.488,12 -0,11.512 0,10.909C0,10.307 0.488,9.818 1.091,9.818L20.275,9.818L12.32,1.862C11.893,1.436 11.893,0.746 12.32,0.32C12.746,-0.107 13.436,-0.107 13.862,0.32L23.68,10.138Z"/>
-    </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="arrow-forward-new" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.68,10.138C24.106,10.564 24.106,11.254 23.68,11.68L13.862,21.499C13.436,21.925 12.746,21.925 12.32,21.499C11.893,21.073 11.893,20.382 12.32,19.956L20.275,12L1.091,12C0.488,12 0,11.512 0,10.909C0,10.307 0.488,9.818 1.091,9.818L20.275,9.818L12.32,1.862C11.893,1.436 11.893,0.746 12.32,0.32C12.746,-0.107 13.436,-0.107 13.862,0.32L23.68,10.138Z" fill="currentColor"/>
 </svg>

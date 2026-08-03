@@ -18,7 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.home-nav-item, .sub-nav-item');
     const sidebar = document.querySelector('.sidebar');
     const pageSwitchWrapperEl = document.querySelector('.page-switch-wrapper');
-    const currentPage = pageSwitchWrapperEl ? pageSwitchWrapperEl.dataset.currentPage : '';
+    // 通过 body 属性或 settings 面板推断当前页面
+    var pageThemes = ['data-page-theme', 'theme-green', 'theme-blue', 'theme-gold'];
+    var currentPage = '';
+    if (document.body.hasAttribute('data-page-theme')) {
+        currentPage = document.body.getAttribute('data-page-theme');
+    } else if (document.body.classList.contains('theme-green')) {
+        currentPage = 'green';
+    } else if (document.body.classList.contains('theme-blue')) {
+        currentPage = 'blue';
+    } else if (document.body.classList.contains('theme-gold')) {
+        currentPage = 'gold';
+    }
     
     let darkSections = ['hero', 'media'];
     if (currentPage === 'technology') {
@@ -160,6 +171,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 navItems.forEach(item => {
                     item.classList.toggle('active', item.dataset.section === sectionId);
                 });
+                // 同步更新顶栏导航高亮
+                document.querySelectorAll('.top-nav-item').forEach(function(item) {
+                    item.classList.toggle('active', item.dataset.section === sectionId);
+                });
                 // 切换侧栏明暗主题
                 const isDarkSection = darkSections.includes(sectionId);
                 if (isDarkSection) {
@@ -179,6 +194,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // 导航点击平滑滚动
     // ==========================================
     navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    
+    // 顶栏导航项点击平滑滚动
+    document.querySelectorAll('.top-nav-item').forEach(function(item) {
         item.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href.startsWith('#')) {
@@ -244,17 +274,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         resetState() {
             this.slides.forEach(slide => {
-                slide.classList.remove('active');
-                slide.style.zIndex = '';
+                slide.classList.remove('active', 'slide-z-top');
             });
             this.dots.forEach(dot => {
                 dot.classList.remove('active');
                 const progress = dot.querySelector('.dot-progress');
                 if (progress) {
-                    progress.style.transition = 'none';
-                    progress.style.width = '0';
+                    progress.classList.remove('animating');
+                    progress.style.width = '';  // reset to CSS default
                 }
             });
+        },
+        
+        startProgress(dot) {
+            const progress = dot.querySelector('.dot-progress');
+            if (progress) {
+                progress.classList.remove('animating');
+                // Force reflow then start
+                void progress.offsetWidth;
+                progress.style.setProperty('--progress-duration', this.interval + 'ms');
+                progress.classList.add('animating');
+            }
+        },
+        
+        startZoom(slide) {
+            const bg = slide.querySelector('.hero-slide-bg');
+            if (bg) {
+                bg.classList.remove('hero-bg-zoomed');
+                void bg.offsetWidth;
+                bg.style.setProperty('--zoom-duration', this.interval + 'ms');
+                bg.classList.add('hero-bg-zoomed');
+            }
         },
         
         activateSlide(index) {
@@ -266,23 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.classList.add('active');
             
             setTimeout(() => {
-                const progress = dot.querySelector('.dot-progress');
-                if (progress) {
-                    progress.style.transition = 'width ' + this.interval + 'ms linear';
-                    progress.style.width = '100%';
-                }
-            }, 50);
-            
-            setTimeout(() => {
-                const bg = slide.querySelector('.hero-slide-bg');
-                if (bg) {
-                    bg.style.transition = 'none';
-                    bg.style.transform = 'scale(1)';
-                    setTimeout(() => {
-                        bg.style.transition = 'transform ' + this.interval + 'ms linear';
-                        bg.style.transform = 'scale(1.3)';
-                    }, 50);
-                }
+                this.startProgress(dot);
+                this.startZoom(slide);
             }, 50);
         },
         
@@ -308,42 +343,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const oldSlide = this.slides[this.current];
             const newSlide = this.slides[index];
             
-            newSlide.style.zIndex = '4';
-            newSlide.classList.add('active');
+            newSlide.classList.add('active', 'slide-z-top');
             this.dots[index].classList.add('active');
             
             this.dots.forEach(dot => {
                 const progress = dot.querySelector('.dot-progress');
                 if (progress) {
-                    progress.style.transition = 'none';
-                    progress.style.width = '0';
+                    progress.classList.remove('animating');
+                    progress.style.width = '';
                 }
             });
             
             setTimeout(() => {
-                const progress = this.dots[index].querySelector('.dot-progress');
-                if (progress) {
-                    progress.style.transition = 'width ' + this.interval + 'ms linear';
-                    progress.style.width = '100%';
-                }
+                this.startProgress(this.dots[index]);
+                this.startZoom(newSlide);
             }, 50);
             
             setTimeout(() => {
-                const bg = newSlide.querySelector('.hero-slide-bg');
-                if (bg) {
-                    bg.style.transition = 'none';
-                    bg.style.transform = 'scale(1)';
-                    setTimeout(() => {
-                        bg.style.transition = 'transform ' + this.interval + 'ms linear';
-                        bg.style.transform = 'scale(1.3)';
-                    }, 50);
-                }
-            }, 50);
-            
-            setTimeout(() => {
-                oldSlide.classList.remove('active');
-                oldSlide.style.zIndex = '';
-                newSlide.style.zIndex = '';
+                oldSlide.classList.remove('active', 'slide-z-top');
+                newSlide.classList.remove('slide-z-top');
             }, 800);
             
             this.current = index;
@@ -414,10 +432,10 @@ document.addEventListener('DOMContentLoaded', function() {
             this.indicators[this.current].classList.add('active');
             
             if (this.caption && this.data[this.current]) {
-                this.caption.style.opacity = '0';
+                this.caption.classList.remove('media-caption-visible');
                 setTimeout(() => {
                     this.caption.textContent = this.data[this.current].caption;
-                    this.caption.style.opacity = '1';
+                    this.caption.classList.add('media-caption-visible');
                 }, 200);
             }
         },
@@ -736,64 +754,138 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ==========================================
-    // 搜索按钮交互 - 跳转到搜索页并携带当前主题
+    // 设置面板 (Figma 模版切换-展开)
+    // 点击触发器打开 → 关闭按钮关闭 → 点击面板外关闭
     // ==========================================
-    const searchBtn = document.querySelector('.search-btn');
+    var settingsTrigger = document.querySelector('.settings-trigger');
+    var settingsPanel = document.querySelector('.settings-panel');
+    var settingsCloseBtn = document.querySelector('.settings-close-btn');
+    var isHomePage = document.body.hasAttribute('data-page-theme');
+    
+    // 主题映射
+    var themeNames = {
+        'agriculture': 'theme-green',
+        'technology': 'theme-blue',
+        'finance': 'theme-gold'
+    };
+    var themeNameReverse = {
+        'theme-green': 'agriculture',
+        'theme-blue': 'technology',
+        'theme-gold': 'finance'
+    };
+    
+    if (settingsTrigger && settingsPanel) {
+        // 打开面板
+        settingsTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            settingsPanel.classList.toggle('open');
+        });
+        
+        // 关闭按钮
+        if (settingsCloseBtn) {
+            settingsCloseBtn.addEventListener('click', function() {
+                settingsPanel.classList.remove('open');
+            });
+        }
+        
+        // 点击面板外部关闭
+        document.addEventListener('click', function(e) {
+            if (settingsPanel.classList.contains('open') &&
+                !settingsPanel.contains(e.target) &&
+                !settingsTrigger.contains(e.target)) {
+                settingsPanel.classList.remove('open');
+            }
+        });
+        
+        // 阻止面板内点击冒泡
+        settingsPanel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    // ==========================================
+    // 导航栏位置切换
+    // ==========================================
+    var layoutOptions = document.querySelectorAll('.settings-option[data-layout]');
+    var LAYOUT_KEY = 'gk-sub-layout';
+    
+    function applyLayout(layout) {
+        document.body.classList.toggle('layout-topnav', layout === 'topnav');
+        localStorage.setItem(LAYOUT_KEY, layout);
+        
+        // 更新选项按钮样式
+        layoutOptions.forEach(function(opt) {
+            opt.classList.toggle('active', opt.dataset.layout === layout);
+        });
+        
+        // 触发 resize 让侧栏折叠逻辑重新计算
+        window.dispatchEvent(new Event('resize'));
+    }
+    
+    // 从 localStorage 恢复布局偏好
+    var savedLayout = localStorage.getItem(LAYOUT_KEY);
+    if (savedLayout) {
+        applyLayout(savedLayout);
+    }
+    
+    layoutOptions.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+            applyLayout(this.dataset.layout);
+        });
+    });
+    
+    // ==========================================
+    // 主题切换
+    // ==========================================
+    var themeOptions = document.querySelectorAll('.settings-option[data-theme]');
+    
+    // 搜索按钮 - 跳转搜索页
+    var searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {
         searchBtn.addEventListener('click', function() {
             var body = document.body;
             var themes = ['theme-green', 'theme-blue', 'theme-gold'];
             var theme = themes.find(function(t) { return body.classList.contains(t); });
-            // 主页没有 body theme class，通过 page-switch-wrapper 推断
-            if (!theme && pageSwitchWrapperEl) {
-                var pageMap = { agriculture: 'theme-green', technology: 'theme-blue', finance: 'theme-gold' };
-                var currentPage = pageSwitchWrapperEl.getAttribute('data-current-page');
-                theme = pageMap[currentPage] || 'theme-green';
+            // 主页没有 body theme class，通过 settings panel 推断
+            if (!theme) {
+                var activeTheme = document.querySelector('.settings-option[data-theme].active');
+                if (activeTheme) {
+                    theme = themeNames[activeTheme.dataset.theme] || 'theme-green';
+                } else {
+                    theme = 'theme-green';
+                }
             }
             theme = theme || 'theme-green';
-            var themeParam = theme.replace('theme-', '');
-            window.location.href = 'search.html?theme=' + themeParam;
+            window.location.href = 'search.html?theme=' + theme.replace('theme-', '');
         });
     }
     
-    // ==========================================
-    // 页面切换功能
-    // 首页 (有 data-page-theme) → 跳转不同 .html 页面
-    // 二级页面 (body 有 .theme-* class) → 原地切换主题
-    // ==========================================
-    const pageSwitchBtn = document.querySelector('.page-switch-btn');
-    const isHomePage = document.body.hasAttribute('data-page-theme');
-    
-    if (pageSwitchWrapperEl) {
-        pageSwitchWrapperEl.addEventListener('mouseenter', function() {
-            this.classList.add('expanded');
+    function updateThemeUI(theme) {
+        // 更新设置面板主题按钮
+        themeOptions.forEach(function(opt) {
+            opt.classList.toggle('active', themeNames[opt.dataset.theme] === theme);
         });
-        
-        pageSwitchWrapperEl.addEventListener('mouseleave', function() {
-            this.classList.remove('expanded');
-        });
+        // 更新顶栏搜索链接
+        var topNav = document.querySelector('.top-nav');
+        if (topNav) {
+            var searchLink = topNav.querySelector('.top-nav-search');
+            if (searchLink) {
+                searchLink.href = 'search.html?theme=' + theme.replace('theme-', '');
+            }
+        }
     }
     
-    var themeUrls = {
-        'theme-green': { logo: 'public/images/logo-green.svg', logoMini: 'public/images/logo-green-mini.svg', banner: 'public/images/banner-agriculture-bg.webp', home: 'index.html', articleList: 'article-list.html' },
-        'theme-blue': { logo: 'public/images/logo-blue.svg', logoMini: 'public/images/logo-blue-mini.svg', banner: 'public/images/banner-technology-bg.webp', home: 'technology.html', articleList: 'article-list-blue.html' },
-        'theme-gold': { logo: 'public/images/logo-gold.svg', logoMini: 'public/images/logo-gold-mini.svg', banner: 'public/images/banner-finance-bg.webp', home: 'finance.html', articleList: 'article-list-gold.html' }
-    };
-    var themeNames = {
-        'theme-green': 'agriculture',
-        'theme-blue': 'technology',
-        'theme-gold': 'finance'
-    };
-    // 首页页面顺序
-    var homePageOrder = ['agriculture', 'technology', 'finance'];
-
     function switchTheme(theme) {
         var body = document.body;
         var themes = ['theme-green', 'theme-blue', 'theme-gold'];
         themes.forEach(function(t) { body.classList.remove(t); });
         body.classList.add(theme);
         
-        pageSwitchWrapperEl.dataset.currentPage = themeNames[theme];
+        var themeUrls = {
+            'theme-green': { logo: 'public/images/logo-green.svg', logoMini: 'public/images/logo-green-mini.svg', banner: 'public/images/banner-agriculture-bg.webp', home: 'index.html', articleList: 'article-list.html' },
+            'theme-blue': { logo: 'public/images/logo-blue.svg', logoMini: 'public/images/logo-blue-mini.svg', banner: 'public/images/banner-technology-bg.webp', home: 'technology.html', articleList: 'article-list-blue.html' },
+            'theme-gold': { logo: 'public/images/logo-gold.svg', logoMini: 'public/images/logo-gold-mini.svg', banner: 'public/images/banner-finance-bg.webp', home: 'finance.html', articleList: 'article-list-gold.html' }
+        };
         
         var logoFull = document.querySelector('.logo-full');
         var logoMini = document.querySelector('.logo-mini');
@@ -809,7 +901,6 @@ document.addEventListener('DOMContentLoaded', function() {
         var breadcrumbSearchHome = document.getElementById('breadcrumb-search-home');
         if (breadcrumbSearchHome) breadcrumbSearchHome.href = themeUrls[theme].home;
         
-        // 更新侧栏「首页」链接
         var sidebarHero = document.querySelector('.sub-nav-item[data-section="hero"], .home-nav-item[data-section="hero"]');
         if (sidebarHero) {
             sidebarHero.href = themeUrls[theme].home + '#hero';
@@ -818,50 +909,21 @@ document.addEventListener('DOMContentLoaded', function() {
         var breadcrumbNewsLink = document.getElementById('breadcrumb-news-link');
         if (breadcrumbNewsLink) breadcrumbNewsLink.href = themeUrls[theme].articleList;
         
-        var pageSwitchItems = document.querySelectorAll('.page-switch-item');
-        pageSwitchItems.forEach(function(item) {
-            item.classList.remove('active');
-            if (item.dataset.target === themeNames[theme]) {
-                item.classList.add('active');
-            }
-        });
+        updateThemeUI(theme);
     }
-
-    if (pageSwitchBtn && pageSwitchWrapperEl) {
-        pageSwitchBtn.addEventListener('click', function() {
+    
+    themeOptions.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+            var theme = themeNames[this.dataset.theme];
+            if (!theme) return;
+            
             if (isHomePage) {
-                // 首页：循环跳转 agriculture → technology → finance
-                var current = pageSwitchWrapperEl.getAttribute('data-current-page');
-                var idx = homePageOrder.indexOf(current);
-                var next = homePageOrder[(idx + 1) % homePageOrder.length];
-                var urlMap = { agriculture: 'index.html', technology: 'technology.html', finance: 'finance.html' };
-                window.location.href = urlMap[next];
+                // 首页：跳转到对应主题首页
+                var urlMap = { 'theme-green': 'index.html', 'theme-blue': 'technology.html', 'theme-gold': 'finance.html' };
+                window.location.href = urlMap[theme];
             } else {
-                // 二级页面：原地切主题
-                var body = document.body;
-                var themes = ['theme-green', 'theme-blue', 'theme-gold'];
-                var currentTheme = themes.find(function(t) { return body.classList.contains(t); }) || 'theme-green';
-                var currentIndex = themes.indexOf(currentTheme);
-                var nextIndex = (currentIndex + 1) % themes.length;
-                switchTheme(themes[nextIndex]);
-            }
-        });
-    }
-
-    var pageSwitchItems = document.querySelectorAll('.page-switch-item');
-    pageSwitchItems.forEach(function(item) {
-        item.addEventListener('click', function(e) {
-            var target = this.dataset.target;
-            if (!target) return;
-            if (isHomePage) {
-                // 首页：不拦截，让 <a href> 正常跳转
-                return;
-            }
-            var theme = Object.keys(themeNames).find(function(key) { return themeNames[key] === target; });
-            if (theme) {
-                e.preventDefault();
+                // 二级页：原地切换
                 switchTheme(theme);
-                pageSwitchWrapperEl.classList.remove('expanded');
             }
         });
     });
@@ -1011,13 +1073,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const gap = 40;
             const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
-                card.style.width = cardWidth + 'px';
-                card.style.flex = 'none';
-                card.style.minWidth = cardWidth + 'px';
-                card.style.maxWidth = cardWidth + 'px';
+                card.style.width = '';
+                card.style.flex = '';
+                card.style.minWidth = '';
+                card.style.maxWidth = '';
             });
             const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
-            this.track.style.transform = 'translateX(' + offset + 'px)';
+            this.track.style.setProperty('--card-width', cardWidth + 'px');
+            this.track.style.setProperty('--track-offset', offset + 'px');
             this.updateIndicators();
         },
         
@@ -1082,7 +1145,140 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     financeBusinessCarousel.init();
-    
+
+    // ==========================================
+    // 信息公开轮播 (Finance Info Carousel)
+    // 一屏 3 卡，单屏时不切换；为将来补卡预留多屏轮播能力
+    // ==========================================
+    const financeInfoCarousel = {
+        track: document.querySelector('.finance-info-track'),
+        prevBtn: document.querySelector('.finance-info-nav-prev'),
+        nextBtn: document.querySelector('.finance-info-nav-next'),
+        indicatorsContainer: document.querySelector('.finance-info-indicators'),
+        cards: document.querySelectorAll('.finance-info-card'),
+        carousel: document.querySelector('.finance-info-carousel'),
+        currentPage: 0,
+        cardsPerPage: 3,
+        totalPages: 1,
+        timer: null,
+        interval: 5000,
+
+        getCardsPerPage() {
+            const w = window.innerWidth;
+            if (w <= 767) return 1;
+            if (w <= 1199) return 2;
+            return 3;
+        },
+
+        init() {
+            if (!this.track || this.cards.length === 0) return;
+            this.cardsPerPage = this.getCardsPerPage();
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            this.createIndicators();
+            this.bindEvents();
+            this.updatePosition();
+            // 单屏时不自动切换
+            if (this.totalPages > 1) this.startAutoPlay();
+        },
+
+        createIndicators() {
+            if (!this.indicatorsContainer) return;
+            this.indicatorsContainer.innerHTML = '';
+            for (let i = 0; i < this.totalPages; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'finance-info-indicator' + (i === 0 ? ' active' : '');
+                dot.dataset.index = i;
+                this.indicatorsContainer.appendChild(dot);
+            }
+            this.indicators = this.indicatorsContainer.querySelectorAll('.finance-info-indicator');
+        },
+
+        goTo(page) {
+            if (this.totalPages <= 1) return;
+            if (page < 0) page = this.totalPages - 1;
+            if (page >= this.totalPages) page = 0;
+            this.currentPage = page;
+            this.updatePosition();
+            this.updateIndicators();
+        },
+
+        next() { this.goTo(this.currentPage + 1); },
+        prev() { this.goTo(this.currentPage - 1); },
+
+        updatePosition() {
+            if (!this.track) return;
+            const prevTotalPages = this.totalPages;
+            this.cardsPerPage = this.getCardsPerPage();
+            this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+            if (this.currentPage >= this.totalPages) this.currentPage = 0;
+            if (this.totalPages !== prevTotalPages && this.indicatorsContainer) this.createIndicators();
+            // 弹性卡片宽度：按可用空间均分
+            const slider = this.track.parentElement;
+            const sliderWidth = slider.clientWidth;
+            const gap = 40;
+            const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
+            this.cards.forEach(card => {
+                card.style.width = '';
+                card.style.flex = '';
+                card.style.minWidth = '';
+                card.style.maxWidth = '';
+            });
+            const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
+            this.track.style.setProperty('--card-width', cardWidth + 'px');
+            this.track.style.setProperty('--track-offset', offset + 'px');
+            // 单屏时隐藏导航按钮与指示器
+            if (this.carousel) {
+                this.carousel.classList.toggle('single-page', this.totalPages <= 1);
+            }
+            this.updateIndicators();
+        },
+
+        updateIndicators() {
+            if (!this.indicators) return;
+            this.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === this.currentPage);
+            });
+        },
+
+        startAutoPlay() {
+            this.stopAutoPlay();
+            if (this.totalPages <= 1) return;
+            this.timer = setInterval(() => this.next(), this.interval);
+        },
+
+        stopAutoPlay() {
+            if (this.timer) { clearInterval(this.timer); this.timer = null; }
+        },
+
+        resetAutoPlay() { this.stopAutoPlay(); this.startAutoPlay(); },
+
+        bindEvents() {
+            const carousel = this.carousel;
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', () => { this.prev(); this.resetAutoPlay(); });
+            }
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', () => { this.next(); this.resetAutoPlay(); });
+            }
+            if (this.indicatorsContainer) {
+                this.indicatorsContainer.addEventListener('click', (e) => {
+                    const indicator = e.target.closest('.finance-info-indicator');
+                    if (indicator && indicator.dataset.index !== undefined) {
+                        this.goTo(parseInt(indicator.dataset.index));
+                        this.resetAutoPlay();
+                    }
+                });
+            }
+            if (carousel) {
+                carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
+                carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+            window.addEventListener('resize', () => this.updatePosition());
+        }
+    };
+
+    financeInfoCarousel.init();
+
     // ==========================================
     // 产品展示轮播 (Products Carousel)
     // ==========================================
@@ -1160,35 +1356,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const gap = 40;
             const cardWidth = (sliderWidth - gap * (this.cardsPerPage - 1)) / this.cardsPerPage;
             this.cards.forEach(card => {
-                card.style.width = cardWidth + 'px';
-                card.style.flex = 'none';
-                card.style.minWidth = cardWidth + 'px';
-                card.style.maxWidth = cardWidth + 'px';
+                card.style.width = '';
+                card.style.flex = '';
+                card.style.minWidth = '';
+                card.style.maxWidth = '';
             });
             const offset = -this.currentPage * (cardWidth + gap) * this.cardsPerPage;
-            this.track.style.transform = 'translateX(' + offset + 'px)';
+            this.track.style.setProperty('--card-width', cardWidth + 'px');
+            this.track.style.setProperty('--track-offset', offset + 'px');
             this.updateIndicators();
         },
-
+        
         updateIndicators() {
             if (!this.indicators) return;
             this.indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === this.currentPage);
             });
         },
-
+        
         startAutoPlay() {
             this.stopAutoPlay();
             this.timer = setInterval(() => this.next(), this.interval);
         },
-
+        
         stopAutoPlay() {
             if (this.timer) {
                 clearInterval(this.timer);
                 this.timer = null;
             }
         },
-
+        
         resetAutoPlay() {
             this.stopAutoPlay();
             this.startAutoPlay();

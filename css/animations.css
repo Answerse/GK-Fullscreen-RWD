@@ -248,6 +248,11 @@
     to   { transform: scale(1.3); }
 }
 
+/* 首屏轮播背景图缩放动效 */
+.hero-bg-zoomed {
+    animation: heroFirstZoom var(--zoom-duration, 5000ms) ease-out forwards;
+}
+
 /* ========================================
    主营业务 - 背景图切换动效
    ======================================== */
