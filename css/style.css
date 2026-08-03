@@ -3376,6 +3376,22 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     background-repeat: no-repeat;
 }
 
+.business-bg-1 {
+    background-image: url('../public/images/business-bg-1.webp');
+}
+
+.business-bg-2 {
+    background-image: url('../public/images/business-bg-2.webp');
+}
+
+.business-bg-3 {
+    background-image: url('../public/images/business-bg-3.webp');
+}
+
+.business-bg-4 {
+    background-image: url('../public/images/business-bg-4.webp');
+}
+
 .business-card-bg-mask {
     position: absolute;
     inset: 0;
@@ -6799,6 +6815,44 @@ body[data-page-theme="gold"] .sidebar-home.collapsed .home-nav-item:hover .home-
     height: 1px;
     background: var(--color-overlay-white-light);
     margin: var(--spacing-md) 0;
+}
+
+/* 管理后台按钮 */
+.admin-login-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.admin-login-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.admin-login-btn-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.admin-login-btn-icon {
+    width: 16px;
+    height: 16px;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.admin-login-btn:hover .admin-login-btn-icon {
+    transform: translateX(4px);
 }
 
 /* ========================================
