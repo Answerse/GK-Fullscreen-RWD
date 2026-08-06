@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     let darkSections = ['hero', 'media'];
-    if (currentPage === 'technology') {
+    // 科技(blue)/金融(gold)板块的媒体聚焦区域为浅色背景，滚动到该区域时侧栏应切换为浅色主题
+    if (currentPage === 'technology' || currentPage === 'blue') {
         darkSections = ['hero'];
-    } else if (currentPage === 'finance') {
+    } else if (currentPage === 'finance' || currentPage === 'gold') {
         darkSections = ['hero'];
     }
     
@@ -175,15 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('.top-nav-item').forEach(function(item) {
                     item.classList.toggle('active', item.dataset.section === sectionId);
                 });
-                // 切换侧栏明暗主题
-                const isDarkSection = darkSections.includes(sectionId);
-                if (isDarkSection) {
-                    sidebar.classList.remove('theme-light');
-                    sidebar.classList.add('theme-dark');
-                } else {
-                    sidebar.classList.remove('theme-dark');
-                    sidebar.classList.add('theme-light');
-                }
             }
         });
     }, observerOptions);
@@ -678,6 +670,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 兜底：scroll 和 resize 后重新检查所有 section 的可见性
     let fallbackTimer = null;
+    
+    // 根据当前滚动位置同步侧栏明暗主题（IntersectionObserver 失效时的兜底方案）
+    function syncSidebarTheme() {
+        if (!sidebar || !mainContainer) return;
+        const scrollTop = mainContainer.scrollTop;
+        const viewportHeight = window.innerHeight;
+        let currentId = '';
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollTop >= top - viewportHeight / 2 &&
+                scrollTop < top + height - viewportHeight / 2) {
+                currentId = section.id;
+            }
+        });
+        if (!currentId) return;
+        // 同步导航高亮（与 IntersectionObserver 逻辑幂等）
+        navItems.forEach(item => {
+            item.classList.toggle('active', item.dataset.section === currentId);
+        });
+        document.querySelectorAll('.top-nav-item').forEach(function(item) {
+            item.classList.toggle('active', item.dataset.section === currentId);
+        });
+        const isDark = darkSections.indexOf(currentId) !== -1;
+        if (isDark) {
+            sidebar.classList.remove('theme-light');
+            sidebar.classList.add('theme-dark');
+        } else {
+            sidebar.classList.remove('theme-dark');
+            sidebar.classList.add('theme-light');
+        }
+    }
+    
     function checkSectionsVisibility() {
         document.querySelectorAll('.section').forEach(section => {
             const rect = section.getBoundingClientRect();
@@ -693,6 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+        syncSidebarTheme();
     }
     function debouncedCheck() {
         if (fallbackTimer) clearTimeout(fallbackTimer);
@@ -700,6 +726,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.addEventListener('scroll', debouncedCheck, { passive: true });
     window.addEventListener('resize', debouncedCheck, { passive: true });
+    // main-container 是实际滚动容器（window 不滚动），需单独监听
+    if (mainContainer) {
+        mainContainer.addEventListener('scroll', debouncedCheck, { passive: true });
+    }
     // 页面完全加载后再检查一次
     window.addEventListener('load', () => {
         setTimeout(checkSectionsVisibility, 500);
